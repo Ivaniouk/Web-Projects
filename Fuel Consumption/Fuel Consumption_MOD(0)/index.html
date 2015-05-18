@@ -1,0 +1,105 @@
+<!DOCTYPE html>    
+<html>
+	<head>
+		<meta charset="utf-8" >
+		<link rel="stylesheet" href="css/style.css">
+		<title>Fuel Calc</title>
+	</head>
+	<body> 
+	<h2><span class="tColor">Planet</span></h2>
+	<br>
+		<table>
+			<tr>
+				 <td>Escape velocity:</td>
+				 <td>Fuel to low orbit</td>
+				 <td>Fuel to break orbit</td>
+			</tr>
+			<tr>
+				<td><input id="Evelocity" onchange="GetFuelPlanet();"></td>
+				<td><span class="output" id="Efuel"></span></td>
+				<td><span class="output" id="fuel"></span></td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<h2><span class="tColor">Space Travel with Reaction Drives</span></h2>
+		<br>
+		<table>
+			<tr>
+				<td colspan="3"><span class="bo">Time to Accelerate</span></td>
+			</tr>
+			<tr>
+				<td>Delta-V</td>
+				<td>Acceleration in G</td>
+				<td>Time spent(hours)</td>
+			</tr>
+			<tr>
+				<td><input id="deltaV" onchange="GetAccTime();"></td>
+				<td><input id="G" onchange="GetAccTime();"></td>
+				<td><span class="output" id="accTime"></span></td>
+			</tr>
+			<tr>
+				<td colspan="3"><span class="bo">Distance Traveled during Boost</span></td>
+			</tr>
+			<tr>
+				<td>Acceleration time</td>
+				<td>Acceleration in G</td>
+				<td>Traveled in AU</td>
+			</tr>
+			<tr>
+				<td><input id="AccT" onchange="GetBoostTrav();"></td>
+				<td><input id="sGs" onchange="GetBoostTrav();"></td>
+				<td><span class="output" id="TravBoost"></span></td>
+			</tr>
+		</table>
+		<br>
+		<table>
+			<tr>
+				<td colspan="4"><span class="bo">Cruise Time</span></td>
+			</tr>
+			<tr>
+				<td>Boost Distance </td>
+				<td>Distance(AU)</td>
+				<td>Delta-V</td>
+				<td>Time</td>
+			</tr>
+			<tr>
+				<td><input id="BoostDst" onchange="CruiseTime();"></td>
+				<td><input id="Distance" onchange="CruiseTime();"></td>
+				<td><input id="sDeltaV" onchange="CruiseTime();"></td>
+				<td><span class="output" id="Time"></span></td>
+			</tr>
+		</table>
+			
+		<script>
+			function CruiseTime () {
+				var BoostDst = document.getElementById("BoostDst");
+				var Distance = document.getElementById("Distance");
+				var sDeltaV = document.getElementById("sDeltaV");
+				
+				Time.innerHTML = parseFloat(( (Distance.value - (BoostDst.value * 2)) * 1.076 / sDeltaV.value ) * 1000).toFixed(2);
+			}
+		
+			function GetBoostTrav() {
+				var AccT = document.getElementById("AccT");
+				var sGs = document.getElementById("sGs");
+				
+				TravBoost.innerHTML = parseFloat( (Math.pow(AccT.value, 2)) * sGs.value * 0.00042).toFixed(4);
+			}
+		
+			function GetAccTime() {
+				var deltaV = document.getElementById("deltaV");
+				var G = document.getElementById("G");
+				
+				accTime.innerHTML = parseFloat((deltaV.value * 0.0455) /G.value).toFixed(1);
+			}
+			
+			function GetFuelPlanet() {
+				var Evelocity = document.getElementById("Evelocity");
+				fuel.innerHTML = parseFloat(Evelocity.value * 30) / 100;
+				Efuel.innerHTML = parseFloat((Evelocity.value * 80) / 100).toFixed(1);;		
+			}
+		</script>
+		
+	</body>
+</html>

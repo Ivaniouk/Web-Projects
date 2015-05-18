@@ -1,0 +1,108 @@
+<!DOCTYPE html>    
+<html>
+	<head>
+		<meta charset="utf-8" >
+		<link rel="stylesheet" href="css/style.css">
+		<title>Fuel Calc MOD(4.1)</title>
+		<script src="js/jquery.js" ></script> 
+		<script src="js/script.js"></script>
+	</head>
+	<body> 
+		
+		<div id="PLANET_CONSUMPTION_FLIP">PLANET CONSUMPTION</div>
+		<div id="planetFuel">
+			<table>
+				<tr>
+					 <td class="firstColText">Escape velocity</td>
+					 <td><input id="Evelocity"></td>
+					 <td rowspan="3"><input id="FuelButton" type="button" value="GO!"> 
+						<br><br>
+						<input id="ResetButtonPlanet" type="button" value="RESET"> 
+					 </td>
+				</tr>
+				<tr>
+					<td class="firstColText">Low orbit</td>
+					<td><span class="output" id="fuelLowOrbit"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Breakorbit</span></td>
+					<td><span class="output" id="fuelBreakOrbit"></span></td>
+				</tr>
+			</table>
+		</div>
+	
+		<div id="TOTAL_FUEL_CONSUMPTION_FLIP">TOTAL FUEL CONSUMPTION</div>
+		<div id="totalFuelTime">
+			<table>
+				<tr>
+					 <td class="firstColText">Delta-V</td>
+					 <td><input id="DeltaV"></td>
+					 <td rowspan="3"><input id="TotalButton" type="button" value="GO!"> 
+						<br><br>
+						<input id="ResetButtonTime" type="button" value="RESET"> 
+					 </td>
+				</tr>
+				<tr>
+					<td class="firstColText">Acceleration in G</td>
+					<td><input id="AccelerationG"></td>
+					
+				</tr>
+				<tr>
+					<td class="firstColText">Distance(AU)</span></td>
+					<td><input id="DistanceTotal"></td>
+				</tr><!-- -->
+				<tr>
+					<td class="firstColText">Time to Accelerate</span></td>
+					<td colspan="2"><span class="output" id="AccTimeOut"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Time to Accelerate/Stop</span></td>
+					<td colspan="2"><span class="output" id="AccTimeTotalOut"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Traveled during Boost/Stop(AU)</span></td>
+					<td colspan="2"><span class="output" id="TraveledBoostOut"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Cruise Time(days)</span></td>
+					<td colspan="2"><span class="output" id="CruiseTimeOut"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Total Time(days)</span></td>
+					<td colspan="2"><span class="output" id="TotalTimeOut"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Total Fuel Spent</span></td>
+					<td colspan="2"><span class="output" id="TotalFuelOut"></span></td>
+				</tr>
+			</table>
+		</div>	
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

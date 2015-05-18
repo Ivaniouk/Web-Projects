@@ -1,0 +1,48 @@
+body{
+	padding: 0 10%;
+	background-image: url( ../img/back.jpg );
+}
+ 
+#MainTable{
+	width: 700px;
+	
+	margin: auto;
+	margin-top: 5%;
+	
+	border: 1px solid black;
+	padding: 10px;
+	
+	background-color: #424c55;
+	border-radius: 10px;
+}
+ 
+ #Range_Value{
+	width: 90px;
+	text-align: center;
+	border-radius: 10px;
+ }
+ 
+#Calc_Button, #Reset_Button{
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+}
+
+.output{
+	color: red;
+	font-size: 30px;
+}
+ 
+ td { 
+	border-collapse: collapse;
+	border: 1px solid black;
+	border-radius: 20px 10px 20px 10px;
+	text-align: center;
+	height: 50px;
+	width: 120px;
+}
+
+select{
+	width: 70px;
+	border-radius: 10px;
+}

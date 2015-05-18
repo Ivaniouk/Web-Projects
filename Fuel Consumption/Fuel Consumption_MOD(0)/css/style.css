@@ -1,0 +1,41 @@
+ body{
+		padding: 0 10%;
+		background-image: url( ../img/back.jpg );
+		background-repeat: no-repeat;
+ }
+ 
+ td { 
+		vertical-align: top; 
+		text-align: center;
+		width: 200px;
+		margin: auto;
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+
+table{	
+		background-color: #424c55;
+		margin: auto;
+		border: solid black 1px; 
+	}
+
+h2{
+		text-align: center;
+		margin: auto;
+}
+
+.bo {
+	font-weight: bold;
+}
+
+.tColor{
+	color: #424c55;
+}
+
+.output{
+	color: red;
+}
+	
+input{
+	text-align: center;
+}
