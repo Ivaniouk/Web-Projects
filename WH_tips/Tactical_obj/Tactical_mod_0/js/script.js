@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-	var CurrentTacticalArray; //active card array
+	//var CurrentTacticalArray; //active card array
 	GetNewDeck_btn.onclick = CreateNewDeck;//forming new deck
 	clearAll_btn.onclick = ResetDeck;//clearing the deck
 	addNewPlayer_btn.onclick = AddPlayerFormPosition;//show add player dialogue form
@@ -15,17 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
 		return value && JSON.parse(value);
 	}
 	//beck up active array if it exists in a storage
-	if(localStorage.TacticalObjArrayLocal){
-		CurrentTacticalArray = localStorage.getObject('TacticalObjArrayLocal');
+	if(localStorage.getObject('TacticalObjArrayLocal')){
+		var CurrentTacticalArray = localStorage.getObject('TacticalObjArrayLocal');
 		document.getElementById("counterOfCards").innerHTML = CurrentTacticalArray.length;
 	}
-	if(localStorage.LocalPlayerArray){
+	//building players on load
+	if(localStorage.getObject('LocalPlayerArray')){
 		var playerArrTMP = localStorage.getObject('LocalPlayerArray');
 		for(var i = 0; i < playerArrTMP.length; i++){
 			BuildPlayer(playerArrTMP[i]);
 		}
 	}
-
 });
 //hiding AddPlayer dialogue form
 function HideAddPlayerForm(){
@@ -39,12 +39,11 @@ function AddPlayerFormPosition(event){
 	AddPlayerForm.style.top = (window.innerHeight / 2) - 190 + "px";
 	AddPlayerForm.style.left = (window.innerWidth / 2) - 190 + "px";
 }
-
 //localStorage.setItem('testObject', JSON.stringify(testObject));
 //setting new deck in storage
 function CreateNewDeck(){
 	localStorage.setObject('TacticalObjArrayLocal', TacticalObjArray);
-	CurrentTacticalArray = TacticalObjArray;
+	var CurrentTacticalArray = TacticalObjArray;
 	document.getElementById("counterOfCards").innerHTML = CurrentTacticalArray.length;
 }
 //killing arrays in storage/current
@@ -53,9 +52,8 @@ function ResetDeck(){
 	localStorage.removeItem("TacticalObjArrayLocal");
 	localStorage.removeItem("LocalPlayerArray");
 	document.getElementById("counterOfCards").innerHTML = 0;
-	window.location.reload();
-	
-	CurrentTacticalArray = null;
+	window.location.reload();	
+	//CurrentTacticalArray = null;
 }
 // building a player
 function AddPlayer(){
@@ -64,7 +62,7 @@ function AddPlayer(){
 		Key : new Date().getTime(),
 		PlayerCardsArray : []
 	};
-	localStorage.getObject('LocalPlayerArray');
+	
 	if(!localStorage.getObject('LocalPlayerArray')){//if no local copy - create one
 		var pArray = new Array();
 		localStorage.setObject('LocalPlayerArray', pArray);
@@ -88,9 +86,34 @@ function BuildPlayer(playerObj){
 							  + "<div class='PlayerCardsPool'></div>"
 							  + "</div>";
 	document.getElementById("PlayersWrap").appendChild(newPlayerForm);
+	var buttonArr = document.getElementsByClassName("PlayerGetCard_btn")
+	for(var i = 0; i < buttonArr.length; i++){
+		buttonArr[i].onclick = getCardHandle;
+	}
 }
-
-
+//return random
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+//TODO
+//GetCard listener
+function getCardHandle(event){
+	var CurrentTacticalArray = localStorage.getObject('TacticalObjArrayLocal');
+	var rand = getRandomInt(0, CurrentTacticalArray.length);
+	var pArrayTMP = localStorage.getObject('LocalPlayerArray');
+	var divActiveDataKey = event.target.parentNode.getAttribute('data-key');
+	for(var i = 0; i < pArrayTMP.length; i++){
+		if(pArrayTMP[i].Key == divActiveDataKey){
+			pArrayTMP[i].PlayerCardsArray.push(CurrentTacticalArray[rand]);
+			localStorage.setObject('LocalPlayerArray', pArrayTMP);
+			break;
+		}
+	}
+	CurrentTacticalArray.splice(rand, 1);
+	localStorage.setObject('TacticalObjArrayLocal', CurrentTacticalArray);
+	document.getElementById("counterOfCards").innerHTML = CurrentTacticalArray.length;
+	CurrentTacticalArray = null;
+}
 
 
 
