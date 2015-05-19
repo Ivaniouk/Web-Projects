@@ -77,16 +77,33 @@ function AddPlayer(){
 	playerObj = null;
 }
 //building player form
+//<div class='PoolCard'></div>
 function BuildPlayer(playerObj){
 	var newPlayerForm = document.createElement('div');
 	newPlayerForm.setAttribute('class', 'PlayerForm');
 	newPlayerForm.setAttribute('data-key', playerObj.Key);
 	newPlayerForm.innerHTML =  "<div class='PlayerNameDisplay'>" + playerObj.Name + "</div>"
-							  + "<div class='PlayerGetCard_btn'>Get Card</div>"
-							  + "<div class='PlayerCardsPool'></div>"
-							  + "</div>";
+							  + "<div class='PlayerGetCard_btn'>Get Card</div>";
+								var newPlayerCardPool = document.createElement('div');
+								newPlayerCardPool.setAttribute('class', 'PlayerCardsPool');
+								if(playerObj.PlayerCardsArray != null){
+									var newPlayerCardPool = document.createElement('div');
+									newPlayerCardPool.setAttribute('class', 'PlayerCardsPool');
+									var newCard;
+									for(var i = 0; i < playerObj.PlayerCardsArray.length; i++){
+										newCard = document.createElement('div');
+										newCard.setAttribute('class', 'PoolCard');
+										newCard.innerHTML = playerObj.PlayerCardsArray[i].Text;
+										newPlayerCardPool.appendChild(newCard);
+										newCard = null;
+									}
+									newPlayerForm.appendChild(newPlayerCardPool);
+								}
+								else{
+									newPlayerForm.appendChild(newPlayerCardPool);
+								}
 	document.getElementById("PlayersWrap").appendChild(newPlayerForm);
-	var buttonArr = document.getElementsByClassName("PlayerGetCard_btn")
+	var buttonArr = document.getElementsByClassName("PlayerGetCard_btn");
 	for(var i = 0; i < buttonArr.length; i++){
 		buttonArr[i].onclick = getCardHandle;
 	}
@@ -95,23 +112,36 @@ function BuildPlayer(playerObj){
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+//remove player form
+function KillPlayerForm(playerID){
+	var playerArr = document.getElementsByClassName("PlayerForm");
+	for(var i = 0; i < playerArr.length; i++){
+		if(playerArr[i].getAttribute('data-key') == playerID){
+			playerArr[i].remove(); // remove players form from the page
+		}
+	}
+}
 //TODO
 //GetCard listener
 function getCardHandle(event){
-	var CurrentTacticalArray = localStorage.getObject('TacticalObjArrayLocal');
-	var rand = getRandomInt(0, CurrentTacticalArray.length);
-	var pArrayTMP = localStorage.getObject('LocalPlayerArray');
-	var divActiveDataKey = event.target.parentNode.getAttribute('data-key');
+	var playerObjTMP; // objec for rebuilding a player
+	var CurrentTacticalArray = localStorage.getObject('TacticalObjArrayLocal'); //get base card deck fro storage
+	var rand = getRandomInt(0, CurrentTacticalArray.length); //getting random int
+	var pArrayTMP = localStorage.getObject('LocalPlayerArray'); // get all players from storage
+	var divActiveDataKey = event.target.parentNode.getAttribute('data-key');// get key of current player
 	for(var i = 0; i < pArrayTMP.length; i++){
 		if(pArrayTMP[i].Key == divActiveDataKey){
-			pArrayTMP[i].PlayerCardsArray.push(CurrentTacticalArray[rand]);
-			localStorage.setObject('LocalPlayerArray', pArrayTMP);
+			pArrayTMP[i].PlayerCardsArray.push(CurrentTacticalArray[rand]); //add new cart to active players cardArray
+			localStorage.setObject('LocalPlayerArray', pArrayTMP); //renew data in players array 
+			playerObjTMP = pArrayTMP[i]; // save active player object
 			break;
 		}
 	}
-	CurrentTacticalArray.splice(rand, 1);
-	localStorage.setObject('TacticalObjArrayLocal', CurrentTacticalArray);
-	document.getElementById("counterOfCards").innerHTML = CurrentTacticalArray.length;
+	KillPlayerForm(playerObjTMP.Key); // remove old player form from the page
+	BuildPlayer(playerObjTMP); // rebuld player with new card
+	CurrentTacticalArray.splice(rand, 1); // remove card from base deck 
+	localStorage.setObject('TacticalObjArrayLocal', CurrentTacticalArray); // renew base deck in a storage
+	document.getElementById("counterOfCards").innerHTML = CurrentTacticalArray.length; //renew card counter
 	CurrentTacticalArray = null;
 }
 
