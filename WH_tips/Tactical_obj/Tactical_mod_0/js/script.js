@@ -124,6 +124,7 @@ function FindAndreturnPlayerForm(playerID){
 	}
 }
 //remove player form
+//NOT IN USE
 function KillPlayerForm(playerID){
 	var form = FindAndreturnPlayerForm(playerID);
 	if(form){ 
@@ -137,21 +138,21 @@ function AppendNewCardToPlayerPool(playerID, card){
 //Card listener
 //delete chose card
 function CardHandle(event){
-	var PlayerArrayTMP = localStorage.getObject('LocalPlayerArray');
-	var playerID = event.target.parentNode.parentNode.getAttribute('data-key');
-	var cardID = event.target.getAttribute('data-keyCard');
-	for(var i = 0; i < PlayerArrayTMP.length; i++){
-		if(PlayerArrayTMP[i].Key == playerID){
+	var PlayerArrayTMP = localStorage.getObject('LocalPlayerArray'); //player array from storage
+	var playerID = event.target.parentNode.parentNode.getAttribute('data-key');//find active player
+	var cardID = event.target.getAttribute('data-keyCard');//ID of a card that was pushed
+	for(var i = 0; i < PlayerArrayTMP.length; i++){ //looking for active player in a Array by ID
+		if(PlayerArrayTMP[i].Key == playerID){//looking for a chosen card in a players card pool
 			for(var j = 0; j < PlayerArrayTMP[i].PlayerCardsArray.length; j++){			
 				if(PlayerArrayTMP[i].PlayerCardsArray[j].Position == cardID){
-					PlayerArrayTMP[i].PlayerCardsArray.splice(j, 1);
-					localStorage.setObject('LocalPlayerArray', PlayerArrayTMP);
+					PlayerArrayTMP[i].PlayerCardsArray.splice(j, 1); // remove chosen card from players card pool
+					localStorage.setObject('LocalPlayerArray', PlayerArrayTMP); // save new data in a storage
 					break;
 				}
 			}
 		}
 	}
-	event.target.parentNode.removeChild(event.target);
+	event.target.parentNode.removeChild(event.target); //remove chosen card form
 }
 //GetCard Button listener
 function getCardButtonHandle(event){
