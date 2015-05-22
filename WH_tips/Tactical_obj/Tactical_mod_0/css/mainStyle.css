@@ -27,8 +27,9 @@ body{
 #counterOfCards{
 	font-size: 45px;
 }
-
+/*
 #PlayersWrap{
 	margin: auto;
-	margin-top: 20px;
-}
+	margin-top: 10px;
+	height: 10px;
+}*/

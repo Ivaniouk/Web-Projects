@@ -1,23 +1,23 @@
 /*player form style*/
 #PlayersWrap{
 	width: 100%;
-	/*position: absolute;*/
+	position: absolute;
 	/*margin: auto;*/
 	/*text-align: center;	*/
 	/*vertical-align: top;*/
-	vertical-align: top;
+	/* vertical-align: middle; */
 }
-
+/*
 #PlayerInnerWrap{
 	width: 100%;
 	margin: auto;
-	/*vertical-align: top;
-	text-align: center;*/
-}
+	vertical-align: top;
+	text-align: center;
+}*/
 
 .PlayerForm{
-	/*position: fixed;*/
-	/*top: 0;*/
+	/*position: fixed;
+	top: 0;*/
 	display: inline-block;
 	/*height: 120px;*/
 	width: 280px;

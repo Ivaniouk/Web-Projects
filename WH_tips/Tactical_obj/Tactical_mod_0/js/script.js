@@ -136,7 +136,7 @@ function AppendNewCardToPlayerPool(playerID, card){
 	FindAndreturnPlayerForm(playerID).children[2].appendChild(card); //remove();
 }
 //Card listener
-//delete chose card
+//delete chosen card
 function CardHandle(event){
 	var PlayerArrayTMP = localStorage.getObject('LocalPlayerArray'); //player array from storage
 	var playerID = event.target.parentNode.parentNode.getAttribute('data-key');//find active player
