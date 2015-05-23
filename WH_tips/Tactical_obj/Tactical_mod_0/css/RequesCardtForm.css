@@ -1,9 +1,10 @@
 #RequestCard_form{
 	position: absolute;
 	height: 120px;
-	width: 280px;
+	width: 380px;
 	border: 1px solid black;
 	background-color: green;
+	display: none;
 }
 
 #DeleteLabel{

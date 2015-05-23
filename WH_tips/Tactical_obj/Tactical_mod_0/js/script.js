@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
+	//local card click event
+	var CadrClickEvent;
 	//TODO: FIX CSS
 	GetNewDeck_btn.onclick = CreateNewDeck;//forming new deck
 	clearAll_btn.onclick = ResetDeck;//clearing the deck
 	addNewPlayer_btn.onclick = AddPlayerFormPosition;//show add player dialogue form
 		CancelAddingPlayer_btn.onclick = HideAddPlayerForm;//hide and clear addPlayer dialogue
 	AddPlayer_btn.onclick = AddPlayer;//Add player listener
+	DeleteCard_btn.onclick = DeleteCard;//Delete card 
+	CancelDeleteCard_btn.onclick = HideRequestCardForm; //cancel card delete request 
 	//set object function for storage
 	Storage.prototype.setObject = function(key, value) {
 		this.setItem(key, JSON.stringify(value));
@@ -33,11 +37,23 @@ function HideAddPlayerForm(){
 	document.getElementById('playerName').value = "";
 }
 //positioning AddPlayer form in a screen centre
-function AddPlayerFormPosition(event){
+function AddPlayerFormPosition(){
 	var AddPlayerForm = document.getElementById('addNewPlayer_form');
 	AddPlayerForm.style.display = "block";
 	AddPlayerForm.style.top = (window.innerHeight / 2) - 190 + "px";
 	AddPlayerForm.style.left = (window.innerWidth / 2) - 190 + "px";
+}
+//Show RequestCardForm
+function HideRequestCardForm(){
+	document.getElementById('RequestCard_form').style.display = "none";
+	localStorage.removeItem("EventLocal");
+}
+//position Card delete form
+function CardDeletePositionForm(){
+	var RequestCardForm = document.getElementById('RequestCard_form');
+	RequestCardForm.style.display = "block";
+	RequestCardForm.style.top = (window.innerHeight / 2) - 190 + "px";
+	RequestCardForm.style.left = (window.innerWidth / 2) - 190 + "px";
 }
 //setting new deck in storage
 function CreateNewDeck(){
@@ -135,16 +151,24 @@ function KillPlayerForm(playerID){
 function AppendNewCardToPlayerPool(playerID, card){
 	FindAndreturnPlayerForm(playerID).children[2].appendChild(card); //remove();
 }
-//Card listener
-//delete chosen card
+//Card on click listener
 function CardHandle(event){
+	CadrClickEvent = event.target; //save global card click
+	CardDeletePositionForm();
+	var EventLocal = { //save event
+		playerIDlocal : event.target.parentNode.parentNode.getAttribute('data-key'),
+		cardIDlocal : event.target.getAttribute('data-keyCard'),
+	};
+	localStorage.setObject('EventLocal', EventLocal); //save event to storage
+}
+//delete chosen card from storage and kill the form
+function DeleteCard(){
+	var eventObject = localStorage.getObject('EventLocal'); // get saved event object from storage
 	var PlayerArrayTMP = localStorage.getObject('LocalPlayerArray'); //player array from storage
-	var playerID = event.target.parentNode.parentNode.getAttribute('data-key');//find active player
-	var cardID = event.target.getAttribute('data-keyCard');//ID of a card that was pushed
 	for(var i = 0; i < PlayerArrayTMP.length; i++){ //looking for active player in a Array by ID
-		if(PlayerArrayTMP[i].Key == playerID){//looking for a chosen card in a players card pool
+		if(PlayerArrayTMP[i].Key == eventObject.playerIDlocal){//looking for a chosen card in a players card pool
 			for(var j = 0; j < PlayerArrayTMP[i].PlayerCardsArray.length; j++){			
-				if(PlayerArrayTMP[i].PlayerCardsArray[j].Position == cardID){
+				if(PlayerArrayTMP[i].PlayerCardsArray[j].Position == eventObject.cardIDlocal){
 					PlayerArrayTMP[i].PlayerCardsArray.splice(j, 1); // remove chosen card from players card pool
 					localStorage.setObject('LocalPlayerArray', PlayerArrayTMP); // save new data in a storage
 					break;
@@ -152,7 +176,8 @@ function CardHandle(event){
 			}
 		}
 	}
-	event.target.parentNode.removeChild(event.target); //remove chosen card form
+	CadrClickEvent.parentNode.removeChild(CadrClickEvent);//remove chosen card form
+	HideRequestCardForm();
 }
 //GetCard Button listener
 function getCardButtonHandle(event){
