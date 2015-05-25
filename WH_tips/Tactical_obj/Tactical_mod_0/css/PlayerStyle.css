@@ -2,10 +2,11 @@
 #PlayersWrap{
 	width: 100%;
 	position: absolute;
-	/*margin: auto;*/
-	/*text-align: center;	*/
-	/*vertical-align: top;*/
-	/* vertical-align: middle; */
+	/*
+	left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;*/
 }
 /*
 #PlayerInnerWrap{
@@ -16,10 +17,9 @@
 }*/
 
 .PlayerForm{
-	/*position: fixed;
-	top: 0;*/
+	position: absolute;
+	/*top: 0px;*/
 	display: inline-block;
-	/*height: 120px;*/
 	width: 280px;
 	border-radius: 10px 10px 0 0;
 	background-color: green;

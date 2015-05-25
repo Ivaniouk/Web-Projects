@@ -18,7 +18,7 @@ b{
 	background-color: #E0E0E0 ;	
 	width: 600px;	
 	height: 450px;
-	font-size: 20px;
+	font-size: 23px;
 	color: #202020;
 	margin: 20px 0 0 5px;
 	border-radius: 10px;
@@ -45,11 +45,11 @@ b{
 /*****/
 
 .ActionButton{
-	font-size: 20px;
+	font-size: 25px;
 	width: 95%;
 	border: 1px solid black;
 	border-radius: 10px;
-	
+	margin: 3px 0 0 0;
 	display: inline-block;
 	background-color: #3399FF;
 	color: white;
@@ -61,21 +61,13 @@ b{
 	list-style-type: none;
 }
 
-#menuSmall li{	
-	/*z-index: 0;*/
-	/*margin: 0 0 0 -6px;*/
-	
-	
-}
-
 #menuSmall li span{ 
 	width: 100%;
 	height: 100%;
-	/*z-index: 0;*/
 	display: inline-block;	
 	border-radius: 10px;
-	padding: 5px 0 5px 0;
-	text-indent: 7px;
+	padding: 10px 0 10px 0;
+	text-indent: 15px;
 }
 
 #menuSmall li input{
