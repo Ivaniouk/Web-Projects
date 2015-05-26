@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	//local card click event
 	var CadrClickEvent;
+	//player position
 	//TODO: FIX CSS
 	GetNewDeck_btn.onclick = CreateNewDeck;//forming new deck
 	clearAll_btn.onclick = ResetDeck;//clearing the deck
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	if(localStorage.getObject('LocalPlayerArray')){
 		var playerArrTMP = localStorage.getObject('LocalPlayerArray');
 		for(var i = 0; i < playerArrTMP.length; i++){
+			localStorage.setObject('localPlayerPosition', i);
 			BuildPlayer(playerArrTMP[i]);
 		}
 	}
@@ -83,6 +85,7 @@ function AddPlayer(){
 	var playerArrayTMP = localStorage.getObject('LocalPlayerArray', pArray);//
 	playerArrayTMP.push(playerObj);											//Add player to local storage
 	localStorage.setObject('LocalPlayerArray', playerArrayTMP);				//
+	localStorage.setObject('localPlayerPosition', playerArrayTMP.length - 1); // player position on page
 	BuildPlayer(playerObj)//building player form
 	HideAddPlayerForm();
 }
@@ -112,7 +115,7 @@ function BuildPlayer(playerObj){
 	newPlayerForm.setAttribute('data-key', playerObj.Key);
 	newPlayerForm.innerHTML =  "<div class='PlayerNameDisplay'>" + playerObj.Name + "</div>"
 							  + "<div class='PlayerGetCard_btn'>Get Card</div>";
-								if(playerObj.PlayerCardsArray != null){ // check 
+								if(playerObj.PlayerCardsArray != null){ // check players card pool
 									newPlayerForm.appendChild(BuildPlayerCards(playerObj));
 								}
 								else{
@@ -120,7 +123,9 @@ function BuildPlayer(playerObj){
 									newPlayerCardPool.setAttribute('class', 'PlayerCardsPool');
 									newPlayerForm.appendChild(newPlayerCardPool);
 								}
+	newPlayerForm.style.left = (localStorage.getObject('localPlayerPosition')) * 285 + 'px'; //position player blocks
 	document.getElementById("PlayersWrap").appendChild(newPlayerForm);
+	
 	var buttonArr = document.getElementsByClassName("PlayerGetCard_btn");
 	for(var i = 0; i < buttonArr.length; i++){
 		buttonArr[i].onclick = getCardButtonHandle;
