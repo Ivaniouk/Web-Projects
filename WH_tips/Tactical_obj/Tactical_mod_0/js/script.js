@@ -31,12 +31,17 @@ document.addEventListener('DOMContentLoaded', function () {
 			localStorage.setObject('localPlayerPosition', i);
 			BuildPlayer(playerArrTMP[i]);
 		}
+		SetPlayerWrapPosition(localStorage.getObject('LocalPlayerArray').length);
 	}
 });
 //hiding AddPlayer dialogue form
 function HideAddPlayerForm(){
 	document.getElementById('addNewPlayer_form').style.display = "none";
 	document.getElementById('playerName').value = "";
+}
+//position main player wrapper 
+function SetPlayerWrapPosition(newWidth){
+	document.getElementById('PlayersWrap').style.width = (newWidth * 285) + 'px';
 }
 //positioning AddPlayer form in a screen centre
 function AddPlayerFormPosition(){
@@ -86,6 +91,7 @@ function AddPlayer(){
 	playerArrayTMP.push(playerObj);											//Add player to local storage
 	localStorage.setObject('LocalPlayerArray', playerArrayTMP);				//
 	localStorage.setObject('localPlayerPosition', playerArrayTMP.length - 1); // player position on page
+	SetPlayerWrapPosition(localStorage.getObject('LocalPlayerArray').length);
 	BuildPlayer(playerObj)//building player form
 	HideAddPlayerForm();
 }
