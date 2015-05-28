@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	//local card click event
 	var CadrClickEvent;
-	//player position
-	//TODO: FIX CSS
+	//player position 
 	GetNewDeck_btn.onclick = CreateNewDeck;//forming new deck
 	clearAll_btn.onclick = ResetDeck;//clearing the deck
 	addNewPlayer_btn.onclick = AddPlayerFormPosition;//show add player dialogue form
@@ -55,9 +54,16 @@ function HideRequestCardForm(){
 	document.getElementById('RequestCard_form').style.display = "none";
 	localStorage.removeItem("EventLocal");
 }
-//position Card delete form
-function CardDeletePositionForm(){
+//position Card delete form Show card description
+function CardDeletePositionForm(cardID){
 	var RequestCardForm = document.getElementById('RequestCard_form');
+	var cardArrTMP = TacticalObjArray;
+	for(var i = 0; i < cardArrTMP.length; i++){
+		if(cardArrTMP[i].Position == cardID){
+			RequestCardForm.children[0].innerHTML = cardArrTMP[i].Description;
+			break;
+		}
+	}
 	RequestCardForm.style.display = "block";
 	RequestCardForm.style.top = (window.innerHeight / 2) - 190 + "px";
 	RequestCardForm.style.left = (window.innerWidth / 2) - 190 + "px";
@@ -110,7 +116,7 @@ function BuildPlayerCards(playerObj){
 	newPlayerCardPool.setAttribute('class', 'PlayerCardsPool');
 	var newCard;
 	for(var i = 0; i < playerObj.PlayerCardsArray.length; i++){
-		newPlayerCardPool.appendChild(BuildingCardNODE(playerObj.PlayerCardsArray[i]));
+		newPlayerCardPool.appendChild(BuildingCardNODE(playerObj.PlayerCardsArray[i]));// building a card and appending to card pool NODE
 	}
 	return newPlayerCardPool;
 }
@@ -130,9 +136,8 @@ function BuildPlayer(playerObj){
 									newPlayerForm.appendChild(newPlayerCardPool);
 								}
 	newPlayerForm.style.left = (localStorage.getObject('localPlayerPosition')) * 285 + 'px'; //position player blocks
-	document.getElementById("PlayersWrap").appendChild(newPlayerForm);
-	
-	var buttonArr = document.getElementsByClassName("PlayerGetCard_btn");
+	document.getElementById("PlayersWrap").appendChild(newPlayerForm);	
+	var buttonArr = document.getElementsByClassName("PlayerGetCard_btn");//adding listener to GET CARD button
 	for(var i = 0; i < buttonArr.length; i++){
 		buttonArr[i].onclick = getCardButtonHandle;
 	}
@@ -141,7 +146,7 @@ function BuildPlayer(playerObj){
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
-//find and return player
+//find and return player form
 function FindAndreturnPlayerForm(playerID){
 	var playerArr = document.getElementsByClassName("PlayerForm");
 	for(var i = 0; i < playerArr.length; i++){
@@ -165,11 +170,11 @@ function AppendNewCardToPlayerPool(playerID, card){
 //Card on click listener
 function CardHandle(event){
 	CadrClickEvent = event.target; //save global card click
-	CardDeletePositionForm();
 	var EventLocal = { //save event
 		playerIDlocal : event.target.parentNode.parentNode.getAttribute('data-key'),
 		cardIDlocal : event.target.getAttribute('data-keyCard'),
 	};
+	CardDeletePositionForm(EventLocal.cardIDlocal);//position dialogue window
 	localStorage.setObject('EventLocal', EventLocal); //save event to storage
 }
 //delete chosen card from storage and kill the form
