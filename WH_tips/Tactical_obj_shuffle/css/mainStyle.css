@@ -1,0 +1,33 @@
+body{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	background-image: url(../img/image.jpg);
+}
+
+#mainWrapper{
+	width: 612px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+#GetNewDeck_btn, #clearAll_btn, #addNewPlayer_btn, #counterOfCards{
+	height: 100px;
+	width: 150px;
+	background-color: #0033CC;
+	display: inline-block;
+	line-height: 100px;
+	text-align: center;
+	color: white;
+	font-size: 27px;
+	font-weight: bold;
+	border-radius: 10px;
+	vertical-align: top;
+}
+
+#counterOfCards{
+	font-size: 45px;
+}
+
+#GetNewDeck_btn, #clearAll_btn, #addNewPlayer_btn, #counterOfCards:hover{
+	cursor: pointer;
+}
