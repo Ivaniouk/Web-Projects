@@ -18,6 +18,21 @@ document.addEventListener('DOMContentLoaded', function () {
 		var value = this.getItem(key);
 		return value && JSON.parse(value);
 	}
+	//shuffle
+	Array.prototype.shuffle = function() {
+		var currentIndex = this.length, temporaryValue, randomIndex ;
+		// While there remain elements to shuffle...
+		while (0 !== currentIndex) {
+			// Pick a remaining element...
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex -= 1;
+			// And swap it with the current element.
+			temporaryValue = this[currentIndex];
+			this[currentIndex] = this[randomIndex];
+			this[randomIndex] = temporaryValue;
+		}
+		//return array;
+	}
 	//beck up active array if it exists in a storage
 	if(localStorage.getObject('TacticalObjArrayLocal')){
 		var CurrentTacticalArray = localStorage.getObject('TacticalObjArrayLocal');
@@ -70,8 +85,9 @@ function CardDeletePositionForm(cardID){
 }
 //setting new deck in storage
 function CreateNewDeck(){
-	localStorage.setObject('TacticalObjArrayLocal', TacticalObjArray);
 	var CurrentTacticalArray = TacticalObjArray;
+	CurrentTacticalArray.shuffle();
+	localStorage.setObject('TacticalObjArrayLocal', TacticalObjArray);
 	document.getElementById("counterOfCards").innerHTML = CurrentTacticalArray.length;
 }
 //killing arrays in storage/current
@@ -130,7 +146,7 @@ function BuildPlayer(playerObj){
 								if(playerObj.PlayerCardsArray != null){ // check players card pool
 									newPlayerForm.appendChild(BuildPlayerCards(playerObj));
 								}
-								else{
+								else{ //players card pool not empty
 									var newPlayerCardPool = document.createElement('div');
 									newPlayerCardPool.setAttribute('class', 'PlayerCardsPool');
 									newPlayerForm.appendChild(newPlayerCardPool);
@@ -199,20 +215,20 @@ function DeleteCard(){
 function getCardButtonHandle(event){
 	var playerObjTMP; // object for rebuilding a player
 	var CurrentTacticalArray = localStorage.getObject('TacticalObjArrayLocal'); //get base card deck from storage
-	var rand = getRandomInt(0, CurrentTacticalArray.length); //getting random int
 	var pArrayTMP = localStorage.getObject('LocalPlayerArray'); // get all players from storage
 	var divActiveDataKey = event.target.parentNode.getAttribute('data-key');// get key of current player
+	
 	for(var i = 0; i < pArrayTMP.length; i++){
 		if(pArrayTMP[i].Key == divActiveDataKey){
-			pArrayTMP[i].PlayerCardsArray.push(CurrentTacticalArray[rand]); //add new cart to active players cardArray
-			var CurrentCard = CurrentTacticalArray[rand]; //saving chosen card
+			pArrayTMP[i].PlayerCardsArray.push(CurrentTacticalArray[0]); //add new cart to active players cardArray
+			var CurrentCard = CurrentTacticalArray[0]; //saving chosen card
 			localStorage.setObject('LocalPlayerArray', pArrayTMP); //renew data in players array 
 			playerObjTMP = pArrayTMP[i]; // save active player object
 			break;
 		}
 	}
 	AppendNewCardToPlayerPool(playerObjTMP.Key, BuildingCardNODE(CurrentCard));// form card NODE and append to player form
-	CurrentTacticalArray.splice(rand, 1); // remove card from base deck 
+	CurrentTacticalArray.shift(); //killing first card
 	localStorage.setObject('TacticalObjArrayLocal', CurrentTacticalArray); // renew base deck in a storage
 	document.getElementById("counterOfCards").innerHTML = CurrentTacticalArray.length; //renew card counter
 }
