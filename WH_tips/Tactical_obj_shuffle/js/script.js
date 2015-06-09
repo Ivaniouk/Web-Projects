@@ -1,53 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-	//local card click event
-	var CadrClickEvent;
-	//player position 
-	GetNewDeck_btn.onclick = CreateNewDeck;//forming new deck
-	clearAll_btn.onclick = ResetDeck;//clearing the deck
-	addNewPlayer_btn.onclick = AddPlayerFormPosition;//show add player dialogue form
-		CancelAddingPlayer_btn.onclick = HideAddPlayerForm;//hide and clear addPlayer dialogue
-	AddPlayer_btn.onclick = AddPlayer;//Add player listener
-	DeleteCard_btn.onclick = DeleteCard;//Delete card 
-	CancelDeleteCard_btn.onclick = HideRequestCardForm; //cancel card delete request 
-	//set object function for storage
-	Storage.prototype.setObject = function(key, value) {
-		this.setItem(key, JSON.stringify(value));
-	}
-	//get object function for storage
-	Storage.prototype.getObject = function(key) {
-		var value = this.getItem(key);
-		return value && JSON.parse(value);
-	}
-	//shuffle
-	Array.prototype.shuffle = function() {
-		var currentIndex = this.length, temporaryValue, randomIndex ;
-		// While there remain elements to shuffle...
-		while (0 !== currentIndex) {
-			// Pick a remaining element...
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex -= 1;
-			// And swap it with the current element.
-			temporaryValue = this[currentIndex];
-			this[currentIndex] = this[randomIndex];
-			this[randomIndex] = temporaryValue;
-		}
-		//return array;
-	}
-	//beck up active array if it exists in a storage
-	if(localStorage.getObject('TacticalObjArrayLocal')){
-		var CurrentTacticalArray = localStorage.getObject('TacticalObjArrayLocal');
-		document.getElementById("counterOfCards").innerHTML = CurrentTacticalArray.length;
-	}
-	//building players on load
-	if(localStorage.getObject('LocalPlayerArray')){
-		var playerArrTMP = localStorage.getObject('LocalPlayerArray');
-		for(var i = 0; i < playerArrTMP.length; i++){
-			localStorage.setObject('localPlayerPosition', i);
-			BuildPlayer(playerArrTMP[i]);
-		}
-		SetPlayerWrapPosition(localStorage.getObject('LocalPlayerArray').length);
-	}
-});
+
 //hiding AddPlayer dialogue form
 function HideAddPlayerForm(){
 	document.getElementById('addNewPlayer_form').style.display = "none";
@@ -60,14 +11,7 @@ function SetPlayerWrapPosition(newWidth){
 //positioning AddPlayer form in a screen centre
 function AddPlayerFormPosition(){
 	var AddPlayerForm = document.getElementById('addNewPlayer_form');
-	AddPlayerForm.style.display = "block";
-	AddPlayerForm.style.top = (window.innerHeight / 2) - 190 + "px";
-	AddPlayerForm.style.left = (window.innerWidth / 2) - 190 + "px";
-}
-//Show RequestCardForm
-function HideRequestCardForm(){
-	document.getElementById('RequestCard_form').style.display = "none";
-	localStorage.removeItem("EventLocal");
+	DifferentFormPositioning(AddPlayerForm);
 }
 //position Card delete form Show card description
 function CardDeletePositionForm(cardID){
@@ -79,9 +23,18 @@ function CardDeletePositionForm(cardID){
 			break;
 		}
 	}
-	RequestCardForm.style.display = "block";
-	RequestCardForm.style.top = (window.innerHeight / 2) - 190 + "px";
-	RequestCardForm.style.left = (window.innerWidth / 2) - 190 + "px";
+	DifferentFormPositioning(RequestCardForm);
+}
+//position form
+function DifferentFormPositioning(div){
+	div.style.display = "block";
+	div.style.top = (window.innerHeight / 2) - 190 + "px";
+	div.style.left = (window.innerWidth / 2) - 190 + "px";
+}
+//Show RequestCardForm
+function HideRequestCardForm(){
+	document.getElementById('RequestCard_form').style.display = "none";
+	localStorage.removeItem("EventLocal");
 }
 //setting new deck in storage
 function CreateNewDeck(){
@@ -109,10 +62,10 @@ function AddPlayer(){
 		localStorage.setObject('LocalPlayerArray', pArray);
 	}
 	//changing local Player array and saving new player 
-	var playerArrayTMP = localStorage.getObject('LocalPlayerArray', pArray);//
-	playerArrayTMP.push(playerObj);											//Add player to local storage
-	localStorage.setObject('LocalPlayerArray', playerArrayTMP);				//
-	localStorage.setObject('localPlayerPosition', playerArrayTMP.length - 1); // player position on page
+	var playerArrayTMP = localStorage.getObject('LocalPlayerArray', pArray);	//
+	playerArrayTMP.push(playerObj);												//Add player to local storage
+	localStorage.setObject('LocalPlayerArray', playerArrayTMP);					//
+	localStorage.setObject('localPlayerPosition', playerArrayTMP.length - 1); 	// player position on page
 	SetPlayerWrapPosition(localStorage.getObject('LocalPlayerArray').length);
 	BuildPlayer(playerObj)//building player form
 	HideAddPlayerForm();
@@ -158,10 +111,6 @@ function BuildPlayer(playerObj){
 		buttonArr[i].onclick = getCardButtonHandle;
 	}
 }
-//return random
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
 //find and return player form
 function FindAndreturnPlayerForm(playerID){
 	var playerArr = document.getElementsByClassName("PlayerForm");
@@ -170,6 +119,11 @@ function FindAndreturnPlayerForm(playerID){
 			return playerArr[i] // remove players form from the page
 		}
 	}
+}
+//NOT IN USE
+//return random
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 //remove player form
 //NOT IN USE
@@ -181,7 +135,7 @@ function KillPlayerForm(playerID){
 }
 //Append new card to player form
 function AppendNewCardToPlayerPool(playerID, card){
-	FindAndreturnPlayerForm(playerID).children[2].appendChild(card); //remove();
+	FindAndreturnPlayerForm(playerID).children[2].appendChild(card);
 }
 //Card on click listener
 function CardHandle(event){
@@ -211,7 +165,7 @@ function DeleteCard(){
 	CadrClickEvent.parentNode.removeChild(CadrClickEvent);//remove chosen card form
 	HideRequestCardForm();
 }
-//GetCard Button listener
+//GetCard Button listener - getting new card
 function getCardButtonHandle(event){
 	var playerObjTMP; // object for rebuilding a player
 	var CurrentTacticalArray = localStorage.getObject('TacticalObjArrayLocal'); //get base card deck from storage
