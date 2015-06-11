@@ -61,8 +61,8 @@ function AddPlayer(){
 	var playerArrayTMP = localStorage.getObject('LocalPlayerArray', pArray);	//
 	playerArrayTMP.push(playerObj);												//Add player to local storage
 	localStorage.setObject('LocalPlayerArray', playerArrayTMP);					//
-	localStorage.setObject('localPlayerPosition', playerArrayTMP.length - 1); 	// save number of players for positioning on page
-	SetPlayerWrapPosition(localStorage.getObject('LocalPlayerArray').length);
+	localStorage.setObject('localPlayerPosition', playerArrayTMP.length - 1); 	// save number of players for positioning them on page
+	SetPlayerWrapPosition(localStorage.getObject('LocalPlayerArray').length);   //change size of player wrapper for positioning
 	BuildPlayer(playerObj)//building player form
 	HideAddPlayerForm();
 }
@@ -148,14 +148,11 @@ function DeleteCard(){
 	var eventObject = localStorage.getObject('EventLocal'); // get saved event object from storage
 	var PlayerArrayTMP = localStorage.getObject('LocalPlayerArray'); //player array from storage
 	for(var i = 0; i < PlayerArrayTMP.length; i++){ //looking for active player in a Array by ID
-		if(PlayerArrayTMP[i].Key == eventObject.playerIDlocal){//looking for a chosen card in a players card pool
-			for(var j = 0; j < PlayerArrayTMP[i].PlayerCardsArray.length; j++){			
-				if(PlayerArrayTMP[i].PlayerCardsArray[j].Position == eventObject.cardIDlocal){
-					PlayerArrayTMP[i].PlayerCardsArray.splice(j, 1); // remove chosen card from players card pool
-					localStorage.setObject('LocalPlayerArray', PlayerArrayTMP); // save new data in a storage
-					break;
-				}
-			}
+		if(PlayerArrayTMP[i].Key == eventObject.playerIDlocal){// we found active player
+			//PlayerArrayTMP[i].deleteCard(eventObject.cardIDlocal);
+			PlayerArrayTMP[i].alerting();
+			localStorage.setObject('LocalPlayerArray', PlayerArrayTMP); // save new data in a storage
+			break;
 		}
 	}
 	CadrClickEvent.parentNode.removeChild(CadrClickEvent);//remove chosen card form
@@ -183,33 +180,28 @@ function getCardButtonHandle(event){
 	document.getElementById("counterOfCards").innerHTML = CurrentTacticalArray.length; //renew card counter
 }
 //////////////////////////////////////////////Player class???//////
-/*
-var playerObj = { //creating new player object
-		Name : document.getElementById("playerName").value,
-		Key : new Date().getTime(),
-		PlayerCardsArray : []
-	};
-*/
-
 function Player(Name){
 	this.Name = Name;
 	this.Key = new Date().getTime();
 	this.PlayerCardsArray = [];
 	this.BaseCardDeck = [];
+	
+	this.alerting = function(){
+		alert(1);
+	} 
 }
-	
-	
 /*
-function Apple (type) {
-    this.type = type;
-    this.color = "red";
+Player.prototype.alerting = function(){
+	alert(1);
+}*/
+Player.prototype.deleteCard = function(cardIDlocal){
+	for(var i = 0; i < this.PlayerCardsArray.length; i++){
+		if(this.PlayerCardsArray[i].Position == cardIDlocal){
+			this.PlayerCardsArray.splice(i, 1);
+			break;
+		}
+	}
 }
- 
-Apple.prototype.getInfo = function() {
-    return this.color + ' ' + this.type + ' apple';
-};
-*/
-	
 	
 	
 	
