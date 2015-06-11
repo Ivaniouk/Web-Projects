@@ -52,11 +52,7 @@ function ResetDeck(){
 }
 // building a player
 function AddPlayer(){
-	var playerObj = { //creating new player object
-		Name : document.getElementById("playerName").value,
-		Key : new Date().getTime(),
-		PlayerCardsArray : []
-	};
+	var playerObj = new Player(document.getElementById("playerName").value);
 	if(!localStorage.getObject('LocalPlayerArray')){//if no local copy - create one
 		var pArray = new Array();
 		localStorage.setObject('LocalPlayerArray', pArray);
@@ -65,7 +61,7 @@ function AddPlayer(){
 	var playerArrayTMP = localStorage.getObject('LocalPlayerArray', pArray);	//
 	playerArrayTMP.push(playerObj);												//Add player to local storage
 	localStorage.setObject('LocalPlayerArray', playerArrayTMP);					//
-	localStorage.setObject('localPlayerPosition', playerArrayTMP.length - 1); 	// player position on page
+	localStorage.setObject('localPlayerPosition', playerArrayTMP.length - 1); 	// save number of players for positioning on page
 	SetPlayerWrapPosition(localStorage.getObject('LocalPlayerArray').length);
 	BuildPlayer(playerObj)//building player form
 	HideAddPlayerForm();
@@ -186,9 +182,67 @@ function getCardButtonHandle(event){
 	localStorage.setObject('TacticalObjArrayLocal', CurrentTacticalArray); // renew base deck in a storage
 	document.getElementById("counterOfCards").innerHTML = CurrentTacticalArray.length; //renew card counter
 }
+//////////////////////////////////////////////Player class???//////
+/*
+var playerObj = { //creating new player object
+		Name : document.getElementById("playerName").value,
+		Key : new Date().getTime(),
+		PlayerCardsArray : []
+	};
+*/
 
-
-
+function Player(Name){
+	this.Name = Name;
+	this.Key = new Date().getTime();
+	this.PlayerCardsArray = [];
+	this.BaseCardDeck = [];
+}
+	
+	
+/*
+function Apple (type) {
+    this.type = type;
+    this.color = "red";
+}
+ 
+Apple.prototype.getInfo = function() {
+    return this.color + ' ' + this.type + ' apple';
+};
+*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
