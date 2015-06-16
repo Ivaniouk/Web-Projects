@@ -5,12 +5,12 @@ body{
 }
 
 #mainWrapper{
-	width: 612px;
+	width: 310px;
 	margin: auto;
 	margin-top: 20px;
 }
 
-#GetNewDeck_btn, #clearAll_btn, #addNewPlayer_btn, #counterOfCards{
+#clearAll_btn, #addNewPlayer_btn{
 	height: 100px;
 	width: 150px;
 	background-color: #0033CC;
@@ -24,10 +24,6 @@ body{
 	vertical-align: top;
 }
 
-#counterOfCards{
-	font-size: 45px;
-}
-
-#GetNewDeck_btn, #clearAll_btn, #addNewPlayer_btn, #counterOfCards:hover{
+#clearAll_btn, #addNewPlayer_btn:hover{
 	cursor: pointer;
 }
