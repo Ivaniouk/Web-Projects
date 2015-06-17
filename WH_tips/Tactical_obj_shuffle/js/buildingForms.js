@@ -2,6 +2,8 @@
 function HideAddPlayerForm(){
 	document.getElementById('addNewPlayer_form').style.display = "none";
 	document.getElementById('playerName').value = "";
+	var AddPlayerFormUL = document.getElementById('cardUL');
+	AddPlayerFormUL.remove();
 }
 //position main player wrapper 
 function SetPlayerWrapPosition(newWidth){
@@ -9,8 +11,13 @@ function SetPlayerWrapPosition(newWidth){
 }
 //positioning AddPlayer form in a screen centre
 function AddPlayerFormPosition(){
+	var radioCardsMenu = document.getElementById("cardUL")
+	if(radioCardsMenu){
+		radioCardsMenu.remove();
+	}
 	var AddPlayerForm = document.getElementById('addNewPlayer_form');
 	DifferentFormPositioning(AddPlayerForm);
+	buildingAdditionalCardmenu();
 }
 //position Card delete form Show card description
 function CardDeletePositionForm(cardID){
@@ -89,3 +96,76 @@ function FindAndreturnPlayerForm(playerID){
 		}
 	}
 }
+//////////////////////////////////RADIOBUTTON MENU///////////////////////////////////
+//Universal LI builder for menu
+function createLI(parentUL, text){
+	var li = document.createElement("li");
+	li.innerHTML = "<li><label><input type='radio' name='radio2'><span>" + text +"</span></label></li>";//text;
+	li.setAttribute("class", "ActionButton");
+	parentUL.appendChild(li);
+}
+//expansion card radio menu building
+function buildingAdditionalCardmenu(){
+	var parent = document.getElementById("addNewPlayer_form");
+	var BeforeElement = document.getElementById("AddPlayerButtonWrap");
+	var ul = document.createElement("ul");
+	ul.setAttribute("id", "cardUL");
+	parent.insertBefore(ul, BeforeElement);
+	createLI(ul, "Standard deck");
+	createLI(ul, "Astra Militarum");
+	createLI(ul, "Necron");
+	createLI(ul, "Dark Angels");
+	document.querySelector('input[name = "radio2"]').checked = true; //checking first element
+}
+//return changed card deck
+function getChosenDeck(text){
+	var standardDeck = TacticalObjArray;
+	var tmpDeck;
+	switch(text){
+		case("Standard deck"):
+			return standardDeck;
+			break;
+		case("Astra Militarum"):
+			////////////////
+			break;
+		case("Necron"):
+			tmpDeck = concatNewDeck(standardDeck, NecronObjArray);
+			break;
+		case("Dark Angels"):
+			////////////////
+			break;
+	}
+	return tmpDeck;
+}
+//concatenating deck arrays 
+function concatNewDeck(standardDeck, expDeck){
+	standardDeck.splice(0, 6);
+	var newDeck = expDeck.concat(standardDeck);
+	return newDeck;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

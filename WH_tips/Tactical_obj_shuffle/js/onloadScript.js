@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	AddPlayer_btn.onclick = AddPlayer;//Add player listener
 		addNewPlayer_btn.onclick = AddPlayerFormPosition;//show add player dialogue form
 		CancelAddingPlayer_btn.onclick = HideAddPlayerForm;//hide and clear addPlayer dialogue
-	
+
 	DeleteCard_btn.onclick = DeleteCard;//Delete card 
 	CancelDeleteCard_btn.onclick = HideRequestCardForm; //cancel card delete request 
 	//building players on load

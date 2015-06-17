@@ -73,6 +73,7 @@ b{
 	display: inline-block;	
 	border-radius: 10px;
 	padding: 5px 0 5px 0;
+	text-indent: 10px;
 }
 
 #menuSmall li input{
@@ -88,7 +89,6 @@ b{
 #menuSmall span:hover {
 	background-color: #00CCFF;
 	cursor: pointer;
-
 }
 
 

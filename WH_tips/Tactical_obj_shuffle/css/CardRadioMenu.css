@@ -1,0 +1,45 @@
+#cardUL{
+	margin: auto;
+	margin-top: 5px;
+	width: 340px;
+}
+
+.ActionButton{
+	font-size: 23px;
+	font-weight: bold;
+	width: 100%;
+	border: 1px solid black;
+	border-radius: 10px;
+	display: inline-block;
+	background-color: #3399FF;
+	color: white;
+	text-align: left;
+}
+
+#cardUL li{
+	margin-top: 2px;
+}
+
+#cardUL li span{ 
+	width: 100%;
+	height: 100%;
+	display: inline-block;	
+	border-radius: 10px;
+	padding: 10px 0 10px 0;
+	text-indent: 10px;
+}
+
+#cardUL li input{
+	z-index: 5;
+	display: none;
+}
+
+#cardUL li input:checked	+span{ 
+	background-color: #00CCFF;
+	cursor: pointer;
+}
+
+#cardUL span:hover {
+	background-color: #00CCFF;
+	cursor: pointer;
+}

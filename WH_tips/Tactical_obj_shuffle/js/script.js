@@ -5,7 +5,8 @@ function ResetPlayerArray(){
 }
 // building a player
 function AddPlayer(){
-	var newBaseCardDeck = TacticalObjArray;
+	var chosenExpancion = document.querySelector('input[name = "radio2"]:checked').nextSibling.innerHTML;
+	var newBaseCardDeck = getChosenDeck(chosenExpancion);
 	newBaseCardDeck.shuffle();
 	var playerObj = new Player(document.getElementById("playerName").value, newBaseCardDeck);
 	if(!localStorage.getObject('LocalPlayerArray')){//if no local copy - create one
