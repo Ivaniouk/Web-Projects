@@ -1,12 +1,10 @@
 var Res11 = {
-			Position: 0,
-			
+			Position: 0,			
 			Text : "Secure Objective 1 - Capture &amp; Control",
 			Description : "Score 1 Victory Point if you control Objective Marker 1 at the end of your turn."
 		};
 var Res12 = {
-			Position: 1,
-			
+			Position: 1,		
 			Text : "Secure Objective 2 - Capture & Control",
 			Description : "Score 1 Victory Point if you control Objective Marker 2 at the end of your turn."
 		};
@@ -22,7 +20,6 @@ var Res14 = {
 		};
 var Res15 = {
 			Position: 4,
-			Number : 15,
 			Text : "Secure Objective 5 - Capture & Control",
 			Description : "Score 1 Victory Point if you control Objective Marker 5 at the end of your turn."
 		};
@@ -230,7 +227,7 @@ var NecronRes11 = {
 						  + " play. If your Warlord or his unit achieves the bonus Tactical Objective, you score both the"
 						  + " number of Victory Points stated on the bonus Tactical Objective and an additional D3 Victory"
 						  + " Points. If this Tactical Objective is discarded, so too is the bonus Tactical Objective (and vice"
-						  + " versa).";
+						  + " versa)."
 		};
 var NecronRes12 = {
 			Position: 1,
@@ -238,7 +235,7 @@ var NecronRes12 = {
 			Description : "When this Tactical Objective is generated, nominate one of your characters with the Necrons"
 						  +" Faction. Score 1 Victory Point at the end of the game if this character is still alive. Characters"
 						  +" that are not on the table or are Falling Back at the end of the game count as destroyed for"
-						  +" purposes of this Tactical Objective.";
+						  +" purposes of this Tactical Objective."
 		};
 var NecronRes13 = {
 			Position: 2,
@@ -246,7 +243,7 @@ var NecronRes13 = {
 			Description : "Roll a D6 when this Tactical Objective is generated. If the result is an odd number, score D3"
 						  +" Victory points at the end of your turn if you control all 3 odd-numbered Objective Markers. If"
 						  +" the result is an even number, score D3 Victory points at the end of your turn if you control all"
-						  +" 3 even-numbered Objective Markers.";
+						  +" 3 even-numbered Objective Markers."
 
 		};
 var NecronRes14 = {
@@ -256,18 +253,18 @@ var NecronRes14 = {
 						  + " or enemy building was destroyed during your turn. If at least 3 gun emplacements, enemy"
 						  + " vehicles or enemy buildings were destroyed during your turn, score D3 Victory Points"
 						  + " instead. If any of the destroyed vehicles was a Super-heavy vehicle, or if any of the destroyed"
-						  + " buildings had the Mighty Bulwark special rule, score an additional 3 Victory Points.";
+						  + " buildings had the Mighty Bulwark special rule, score an additional 3 Victory Points."
 		};
 var NecronRes15 = {
 			Position: 4,
 			Text : "15 Slaughter the Living",
 			Description : "Score 1 Victory Point at the end of your turn if at least one enemy unit was completely"
-						  + " destroyed during your turn.";
+						  + " destroyed during your turn."
 		};
 var NecronRes16 = {
 			Position: 5,
 			Text : "16 Code of Combat",
-			Description : "Score 1 Victory Point at the end of your turn if you issued at least one challenge during your turn.";
+			Description : "Score 1 Victory Point at the end of your turn if you issued at least one challenge during your turn."
 		};
 
 var NecronObjArray = [NecronRes11, NecronRes12, NecronRes13, NecronRes14, NecronRes15, NecronRes16];

@@ -14,10 +14,11 @@
 	background-color: #3399FF;
 	color: white;
 	text-align: left;
+	margin-top: 2px;
 }
 
 #cardUL li{
-	margin-top: 2px;
+	
 }
 
 #cardUL li span{ 
