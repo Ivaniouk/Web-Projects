@@ -15,13 +15,6 @@ function PuntHandleOnMenu(handle){
 
 //"<li><label><input type='radio' name='radio1' checked><span>" + text +"</span></label></li>"
 
-
-
-
-
-
-
-
 //FLIGHT MENU AND LISTENERS
 function handleFlightMenu(event){
 	var descriptionDiv = document.getElementById("description");
