@@ -1,0 +1,36 @@
+#Range_Number, #Range_Units{
+	width: 90px;
+	height: 32px;
+	padding: 5px;
+	border-radius: 10px;
+	font-size: 21px;
+	text-align: center;
+	padding: 2px;
+	background-color: #F8F8F8;
+}
+
+
+#contextMenu, #Range_Units_Menu{
+	position: fixed;
+	width: 70px;
+	text-align: justify;
+	display: none;
+	list-style: none;
+	border: 1px solid black;
+	padding: 10px 20px 10px 25px;
+	margin: 0;
+	background-color: #F8F8F8;
+	border-radius: 10px;
+}
+
+#contextMenu  li, #Range_Units_Menu li{
+	height: 30px; 
+	font-size: 25px;
+	cursor: pointer;
+	
+	
+}
+
+ul{
+	list-style: none;
+}

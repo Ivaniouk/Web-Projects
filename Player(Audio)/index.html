@@ -1,0 +1,134 @@
+<!DOCTYPE html>   
+ <html>
+	<head>
+		<meta charset="utf-8" >
+		<link rel="stylesheet" href="css/style.css">
+		<title>Player</title>
+		<script>
+			var audio;
+			
+			setInterval(playCheck, 100); // апдейтимо прогрес треку
+			
+			window.onload = function() {
+				audio = document.getElementById("audioPlayer");
+			}
+			
+			function onBodyLoad(){ 
+				document.getElementById( "srcAttribute" ).innerHTML = audio.children[0].getAttribute("src");//отримуємо срц і виводимо над плеєром
+			}
+			
+			function play() {
+				audio.play();
+			}
+
+			function pause() {
+				audio.pause();
+			}
+
+			function stop() {
+				audio.pause();
+				audio.currentTime = 0;
+			}
+			
+			function SetPlayTime(pos) { // отримуємо івент від натсикання
+					var x = pos.offsetX; //позиція курсора в полі durationBar	
+					var durationBar = document.getElementById("durationBar"); //шукаєм елемент durationBar
+					var playDivLength = durationBar.offsetWidth; //	ширина поля durationBar	
+					var posPercent = (x * 100 / playDivLength).toFixed(0); // процентне співвідношення довжини до координат
+					audio.currentTime = ((audio.duration * posPercent)/100).toFixed(1); // виставляємо по процентному трек
+			}
+			
+			function SetSoundLevel(posVol) { // отримуємо івент від натискання
+					var x = posVol.offsetX; //позиція курсора в полі soundLevel	
+					//міняєм позицію кнопки звуку
+					var posButon = document.getElementById("soundLevelButton").offsetLeft;
+					posButon = x - 5;
+						//рівняєм позицію шоб не вилазилаза поле 
+						if(posButon < 0)
+							posButon = 0;
+						else if(posButon > 70) // за меджикнамбери стидно(
+							posButon = 68;
+					 // рівняєм кнопку по центру +/- курсора
+					document.getElementById("soundLevelButton").style.left = posButon + "px";	
+					
+					//те саме співвідношення але тільки зі звуком	
+					var soundLevel = document.getElementById("soundLevel");
+					var soundDivLength = soundLevel.offsetWidth;
+					var posPercentVolume = (x * 100 / soundDivLength).toFixed(0);
+					audio.volume = (1 * posPercentVolume) / 100;
+				
+			}
+			
+			function playCheck() { // чекаємо кожні 100 мілісекунд
+				// замальовуємо лінію відтворення
+				var positionBar = document.getElementById("positionBar");
+				positionBar.style.width = (audio.currentTime / audio.duration * 100)  + "%"; 
+				// змінюємо таймер
+				displayTime = document.getElementById("displayTime");
+				displayTime.innerHTML = ((audio.currentTime*100)/100).toFixed(1);
+			}
+			
+			function setSrcAudio( event ){ //міняємо трек по кліку
+				audio.src = event.target.innerText;
+				audio.play();
+				document.getElementById( "srcAttribute" ).innerHTML = audio.getAttribute("src");
+			}
+			
+		</script>
+	</head>
+	<body  onload = "onBodyLoad();"> <!-- при завантаженні боді-->
+		<audio id="audioPlayer">
+			<source src="audio01.mp3" type="audio/mp3">
+		</audio>
+
+		<div id="playerSkin">
+			<div id="srcAttribute"></div> <!--???-->
+			<div>
+				<div id="durationBar" onclick="SetPlayTime(event)"> <!-- при натисканні передаємо івент-->
+					<div id="positionBar"></div>	
+				</div>
+			</div>
+	
+			<div id="menu">
+				<button onclick="play()">Play</button>
+				<button onclick="pause()">Pause</button>
+				<button onclick="stop()">Stop</button>
+				<div id="soundLevel" onclick="SetSoundLevel(event)"> <!-- при натисканні передаємо івент-->
+					<div id="soundLevelButton"></div>
+				</div>
+				<div id="status">
+					<div id="displayTime">0.0</div>
+				</div>
+			</div>
+			
+			<div id="playList"> 
+				<div id="SongNames">
+					<span onclick="setSrcAudio( event )">audio01.mp3</span><br/>
+					<span onclick="setSrcAudio( event )">audio02.mp3</span><br/>
+					<span onclick="setSrcAudio( event )">audio03.mp3</span><br/>
+					<span onclick="setSrcAudio( event )">audio04.mp3</span><br/>
+					<span onclick="setSrcAudio( event )">audio05.mp3</span><br/>
+				</div>
+			</div>
+		</div>	
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

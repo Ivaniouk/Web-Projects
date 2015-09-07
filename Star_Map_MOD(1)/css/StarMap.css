@@ -1,0 +1,101 @@
+#A_One{
+	position: absolute;
+	top: 25px;
+	left: 20px;
+}
+
+#D_One{
+	position: absolute;
+	top: 25px;
+	right: 25px;
+}
+
+#MainTableMap{
+	position:absolute; 
+    left:0;
+    right:0;
+	margin-top: 2%;
+    margin-left:auto;
+    margin-right:auto;
+	height: 600px;
+	width: 90%;
+	/*border: solid #424c55 10px;*/
+}
+
+#closePlanet{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	height: 0;
+	width: 70px;
+	z-index: 5;
+	background-image: url( ../img/close.png);
+	background-size: 100% 100%;
+}
+.starImgGold{
+	height: 50px;
+	width: 50px;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.starInfo{
+	position: absolute;
+	overflow: hidden;
+	display: inline-block;
+	height: 0;
+}
+
+body{
+	background-image: url( ../img/rsz_1caldari3.jpg ); /*Caldari3*/
+	background-repeat: no-repeat;
+	/*padding: 1%;
+	background-attachment: fixed;*/
+	
+}
+
+table{	
+	width: 100px;
+	text-align: center;
+	/*border: solid black 1px; */
+	background-color: grey;
+	border-radius: 10px;
+}
+
+td{
+	height: 20px;
+	padding: 3px;
+	/*border: solid black 1px; */
+}
+
+#FrameMapWrpper{
+	margin: auto;
+	width: 100%;
+}
+
+#CentralPlanetFrame{
+	width: 100%;
+	height: 0;
+	border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
