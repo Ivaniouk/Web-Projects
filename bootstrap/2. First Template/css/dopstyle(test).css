@@ -1,0 +1,25 @@
+/*жбер х нрярсо ямхгс дкъ акнйнб*/
+.head-block,.top-menu,.top-material,.left-sidebar,.content{
+    background:#ccc;
+    margin-bottom:1px;
+}
+/*бшянрю ьюойх*/
+.head-block{
+    height:150px;
+}
+/*бшянрю лемч*/
+.top-menu{
+    height:30px;
+}
+/*бшянрю акнйю бюфмше люрепхюкш*/
+.top-material{
+    height:200px;
+}
+/*бшянрю яюидаюпю х акнйю йнмремр*/
+.left-sidebar,.content{
+    height:300px;
+}
+/*цпюмхжю с йнмремрю*/
+.content{
+    border-left:1px solid #fff;
+}

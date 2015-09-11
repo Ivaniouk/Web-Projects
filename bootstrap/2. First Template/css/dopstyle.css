@@ -1,0 +1,26 @@
+.head-block{
+    height:250px;
+    background:url(../images/head.png)left center no-repeat;
+}
+.top-menu{
+    background:#daf2fe;
+}
+.top-menu ul{
+    padding-left:0;
+    margin-bottom:0;
+}
+.top-menu li{
+    display:inline-block;
+    margin-left:10px;
+    padding:3px 10px;
+}
+/*ÂÛÑÎÒÀ ÑÀÉÄÁÀĞÀ È ÁËÎÊÀ ÊÎÍÒÅÍÒ*/
+.left-sidebar,.content{
+    height:300px;
+	 background:#ccc;
+}
+/*ÃĞÀÍÈÖÀ Ó ÊÎÍÒÅÍÒÀ*/
+.content{
+    border-left:1px solid #fff;
+	 background:#ccc;
+}
