@@ -25,7 +25,7 @@
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 sidebar"></div><!-- sidebar -->
 			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 content" ng-controller="RuleListCtrl">		
 				<div  class="rules" >
-					<div class="panel panel-default" ng-repeat="rule in rules| filter:searchWord">
+					<div class="panel panel-default" ng-repeat="rule in rules | filter:searchWord">
 						<div class="panel-heading" >{{rule.name}}</div>
 						<div class="panel-body">{{rule.description}}</div>
 					</div>

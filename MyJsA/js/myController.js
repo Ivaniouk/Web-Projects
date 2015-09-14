@@ -7,12 +7,9 @@ myApp.factory('UserService', function() {
 	};
 });
 
-
-
-
 function RuleListCtrl($scope, UserService){
-	//$scope.rules = Complicated;
-	alert(UserService.name);
+	$scope.rules = simple;
+	//alert(UserService.name);
 	switch(UserService.name){
 		case 'One':
 			$scope.rules = simple;
@@ -27,6 +24,7 @@ function RuleListCtrl($scope, UserService){
 			$scope.rules = difficult;
 			break;
 	}
+	 //$scope.$apply();
 }
 
 
@@ -35,12 +33,11 @@ function MainMenuCtrl($scope, UserService){
 	
 	$scope.showBtnName = function(btnName){
 		UserService.name = btnName;
-		
+		alert(UserService.name);
 	}
 }
 
-
-
+//data arrays
 var simple = [
 	{"name": "One Simple",
 	 "description": "This is a first Simple rule"},
