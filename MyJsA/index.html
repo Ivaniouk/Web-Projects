@@ -14,18 +14,15 @@
   <body ng-app>
 	<div class="container" >
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 head-block">
-				<div id="mainMenuWrapper">
-					<button type="button" class="btn btn-default">One</button>
-					<button type="button" class="btn btn-default">Two</button>
-					<button type="button" class="btn btn-default">Three</button>
-					<button type="button" class="btn btn-default">Four</button>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 head-block" ng-controller="MainMenuCtrl">
+				<div id="mainMenuWrapper" class="btnMainArr">
+					<button type="button" class="btn btn-default" ng-repeat="button in btnMainArr" ng-click="showBtnName(button)">{{button}}</button>		
 				</div>
 			</div><!-- head-block -->
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 top-menu">
 				<input ng-model="searchWord" class="form-control" id="searchField" placeholder="Searching">
 			</div><!-- top-menu -->
-			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 sidebar"></div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 sidebar"></div><!-- sidebar -->
 			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 content" ng-controller="RuleListCtrl">		
 				<div  class="rules" >
 					<div class="panel panel-default" ng-repeat="rule in rules| filter:searchWord">
@@ -34,7 +31,7 @@
 					</div>
 				</div>
 			</div><!-- content -->
-			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 sidebar"></div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 sidebar"></div><!-- sidebar -->
 		</div>
 	</div>
 	

@@ -14,3 +14,12 @@ function RuleListCtrl($scope){
 	 "description": "This is a sixth Simple rule"}
 	];
 }
+
+
+function MainMenuCtrl($scope){
+	$scope.btnMainArr = ['One', 'Two', 'Three', 'Four'];
+	
+	$scope.showBtnName = function(btnName){
+		alert(btnName);
+	}
+}
