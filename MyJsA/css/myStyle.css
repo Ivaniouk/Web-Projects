@@ -1,0 +1,50 @@
+/*main menu wrapper*/
+#mainMenuWrapper{
+	line-height: 100px;
+	display: inline-block;
+}
+/*main menu buttons*/
+.btn{
+	width: 100px;
+	height: 50px;
+}
+/*search field*/
+#searchField{
+	width: 400px;
+	margin: auto;
+	font-weight: bold;
+	font-size: 20px;
+	
+}
+/*Rule list*/
+.panel-heading{
+	font-weight: bold;
+}
+
+
+/*Main blocks*/
+.head-block{
+	margin-top:10px;
+    height:100px;
+	background:#daf2fe;
+	text-align: center;
+}
+
+.top-menu{
+	padding: 5px;
+	background:#daf2fe;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+.content{
+	padding: 5px;
+	height:550px;
+	background:#daf2fe;	
+	overflow: auto;
+}
+
+.sidebar{
+	height:550px;
+	background:#daf2fe;;
+}
