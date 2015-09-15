@@ -1,12 +1,3 @@
-//Global variable
-var myApp = angular.module('myApp',[]);
-//service
-myApp.factory('UserService', function() {
-	return {
-		name : 'One'
-	};
-});
-
 function MainMenuCtrl($scope){
 	$scope.btnMainArr = ['One', 'Two', 'Three', 'Four'];
 	$scope.rules = simple;
