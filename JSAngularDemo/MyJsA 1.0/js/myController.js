@@ -7,33 +7,27 @@ myApp.factory('UserService', function() {
 	};
 });
 
-function RuleListCtrl($scope, UserService){
-	$scope.rules = simple;
-	//alert(UserService.name);
-	switch(UserService.name){
-		case 'One':
-			$scope.rules = simple;
-			break;
-		case 'Two':
-			$scope.rules = Complicated;
-			break;
-		case 'Three':
-			$scope.rules = difficult;
-			break;
-		case 'Four':
-			$scope.rules = difficult;
-			break;
-	}
-	 //$scope.$apply();
-}
-
-
-function MainMenuCtrl($scope, UserService){
+function MainMenuCtrl($scope){
 	$scope.btnMainArr = ['One', 'Two', 'Three', 'Four'];
+	$scope.rules = simple;
+	$scope.mainButtonName = '';
 	
-	$scope.showBtnName = function(btnName){
-		UserService.name = btnName;
-		alert(UserService.name);
+	$scope.changeRulesView = function(btnName){
+		$scope.mainButtonName = btnName;
+		switch($scope.mainButtonName){
+			case 'One':
+				$scope.rules = simple;
+				break;
+			case 'Two':
+				$scope.rules = Complicated;
+				break;
+			case 'Three':
+				$scope.rules = moderate;
+				break;
+			case 'Four':
+				$scope.rules = difficult;
+				break;
+		}
 	}
 }
 
@@ -81,6 +75,21 @@ var difficult = [
 	"description": "This is a fifth difficult rule"},
 	{"name": "Six difficult",
 	"description": "This is a sixth difficult rule"}
+	];
+	
+var moderate = [
+	{"name": "One moderate",
+	 "description": "This is a first moderate rule"},
+	{"name": "Two moderate",
+	 "description": "This is a second Simple rule"}, 
+	{"name": "Three moderate",
+	"description": "This is a third moderate rule"},
+	{"name": "Four moderate",
+	"description": "This is a fourth moderate rule"},
+	{"name": "Five moderate",
+	"description": "This is a fifth difficult rule"},
+	{"name": "Six moderate",
+	"description": "This is a sixth moderate rule"}
 	];
 
 	

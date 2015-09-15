@@ -5,7 +5,7 @@ myApp.factory('Data', function(){
 
 function MainCtrl($scope){
 	$scope.alertFunc = function(){
-		alert("CLICK");
+		alert();
 	}
 	
 }
