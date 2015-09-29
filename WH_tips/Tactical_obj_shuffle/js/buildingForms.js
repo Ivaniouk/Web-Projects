@@ -37,7 +37,7 @@ function DifferentFormPositioning(div){
 	div.style.top = (window.innerHeight / 2) - 190 + "px"; //190 half of form width
 	div.style.left = (window.innerWidth / 2) - 190 + "px";
 }
-//Show RequestCardForm
+//Hide RequestCardForm
 function HideRequestCardForm(){
 	document.getElementById('RequestCard_form').style.display = "none";
 	localStorage.removeItem("EventLocal");
