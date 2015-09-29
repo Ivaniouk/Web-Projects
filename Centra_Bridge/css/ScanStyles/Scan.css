@@ -1,0 +1,189 @@
+
+ 
+#MainTable{
+	width: 750px;
+	margin: auto;
+	-webkit-user-select: none;
+	border: 1px solid #E0E0E0;
+	padding: 10px;
+	background-color: #003366;
+	border-radius: 10px;
+	
+}
+ 
+ #Range_Value{
+	width: 90px;
+	height: 24px;
+	text-align: center;
+	border-radius: 10px;
+	font-size: 20px;
+ }
+ 
+ #SizeMod, #SensLVL, #TimeSpent{
+	width: 90px;
+	height: 24px;
+	text-align: center;
+	border-radius: 10px;
+	font-size: 20px;
+ }
+ 
+ 
+#rangeOut{
+	background-color: #045FB4;
+}
+
+#RadioBox{
+	margin: 5px;
+	border: 1px solid #E0E0E0;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: #006699;
+	color: #F8F8F8;
+}
+
+#boxOptions{
+	width: 100%;
+	font-size: 20px;
+	z-index: -1;
+}
+
+
+#boxOptions td{
+	height: 30px;
+	background-color: #3399CC;
+	padding: 0;
+	text-align: left;
+	z-index: -1;
+}
+
+#boxOptions td span{ 
+	background-color: #3399CC; 
+	display: inline-block;
+	width: 99.8%; /*100*/
+	box-sizing: border-box;
+	border-radius: 20px 10px 20px 10px;
+	z-index: 0;
+	padding: 5px 0 5px 4%;
+	margin-left: -20px;
+}
+
+#boxOptions td span:hover{
+	cursor: pointer;
+}
+
+
+#boxOptions td input{ 
+	z-index: 5; 
+}
+
+#boxOptions td input:checked + span{ 
+	background: #33CCCC;
+}
+
+
+.titleTable{
+	font-size: 20px;
+	font-weight: bold;
+	color: FFFFFF;
+	padding: 0 !important;
+	text-align: center !important;
+	background-color: #003366 !important;
+}
+
+.shipData{
+	font-size: 20px;
+	color: #F8F8F8;
+	background-color: #003399; 
+}
+
+.rangeData{
+	background-color: #000099;
+}
+ 
+#Calc_Button, #Reset_Button{
+	height: 50px;
+	width: 80px;
+	margin: 5px;
+	border-radius: 20px 10px 20px 10px;
+	font-weight: bold;
+}
+
+#Calc_Button, #Reset_Button:focus{
+	outline: none;
+}
+
+input:focus{
+	outline: none;
+}
+
+#TOTAL_RESULT{
+	color: #F8F8F8;
+	font-size: 25px;
+}
+
+.output{
+	color: #F8F8F8;
+	font-size: 25px;
+}
+/*
+.form-radio{
+	width:20px !important;
+	height:20px !important;
+}*/
+ 
+ td { 
+	border-collapse: collapse;
+	border: 1px solid #A8A8A8 ;
+	border-radius: 20px 10px 20px 10px;
+	text-align: center;
+	height: 60px;
+	width: 120px;
+}
+
+
+
+select{
+	width: 80px;
+	height: 30px;
+	border-radius: 10px;
+	outline: none;
+}
+
+.scanType{
+	font-size: 30px;
+	color: #F8F8F8;
+	background-color: #000099;
+}
+
+.scanType:hover{
+	/*background-color: blue;*/
+	cursor: pointer;
+}
+
+.scanType:focus{
+	outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

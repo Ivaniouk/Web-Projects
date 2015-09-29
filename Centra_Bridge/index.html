@@ -1,0 +1,245 @@
+<!DOCTYPE html>    
+<html>
+	<head>
+		<meta charset="utf-8" >
+		<link rel="stylesheet" href="css/StarBridge.css">
+		<link rel="stylesheet" href="css/ScanStyles/Scan.css">
+		<link rel="stylesheet" href="css/ScanStyles/ScanSmallMenu.css">
+		<link rel="stylesheet" href="css/FuelConsumptionScript.css">
+		<title>Star Bridge</title>
+		<script src="js/jquery.js" ></script> 
+		<script src="js/Star_Bridge.js"></script>
+		<script src="js/FuelConsumptionScript.js"></script>
+		<script src="js/Scan_Drop_Menu.js"></script>
+		<script src="js/ScanType_Penalty_Obj.js"></script>
+		<script src="js/Scan.js"></script>
+	</head>
+	<body> 
+		<div id="Header">
+		</div><!-- Header -->
+		<div id="HeadMenuWrapper">
+			<ul id="HeaderMenu">
+				<li class="MenuButtonMain" tabindex='1'>MAIN</li>
+				<li class="MenuButtonMain" tabindex='2'>FUEL</li>
+				<li class="MenuButtonMain" tabindex='3'>SCAN</li>
+				<li class="MenuButtonMain" tabindex='4'>MAP</li>
+			</ul>
+		</div>
+		<div id="FrameWrpper">
+			<iframe id="CentralMainFrame" src="" frameborder="0" scrolling="yes">
+			</iframe>
+		</div>
+		
+	<div id="AllFuel">
+		<div id="PLANET_CONSUMPTION_FLIP">PLANET CONSUMPTION</div>
+		<div id="planetFuel">
+			<table>
+				<tr>
+					 <td class="firstColText">Escape velocity</td>
+					 <td><input id="Evelocity"></td>
+					 <td rowspan="3"><input id="FuelButton" type="button" value="GO!"> 
+						<br><br>
+						<input id="ResetButtonPlanet" type="button" value="RESET"> 
+					 </td>
+				</tr>
+				<tr>
+					<td class="firstColText">Low orbit</td>
+					<td><span class="output" id="fuelLowOrbit"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Breakorbit</span></td>
+					<td><span class="output" id="fuelBreakOrbit"></span></td>
+				</tr>
+			</table>
+		</div>
+	
+		<div id="TOTAL_FUEL_CONSUMPTION_FLIP">TOTAL FUEL CONSUMPTION</div>
+		<div id="totalFuelTime">
+			<table>
+				<tr>
+					 <td class="firstColText">Delta-V</td>
+					 <td><input id="DeltaV"></td>
+					 <td rowspan="3"><input id="TotalButton" type="button" value="GO!"> 
+						<br><br>
+						<input id="ResetButtonTime" type="button" value="RESET"> 
+					 </td>
+				</tr>
+				<tr>
+					<td class="firstColText">Acceleration in G</td>
+					<td><input id="AccelerationG"></td>
+					
+				</tr>
+				<tr>
+					<td class="firstColText">Distance(AU)</span></td>
+					<td><input id="DistanceTotal"></td>
+				</tr><!-- -->
+				<tr>
+					<td class="firstColText">Time to Accelerate</span></td>
+					<td colspan="2"><span class="output" id="AccTimeOut"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Time to Accelerate/Stop</span></td>
+					<td colspan="2"><span class="output" id="AccTimeTotalOut"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Traveled during Boost/Stop(AU)</span></td>
+					<td colspan="2"><span class="output" id="TraveledBoostOut"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Cruise Time(days)</span></td>
+					<td colspan="2"><span class="output" id="CruiseTimeOut"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Total Time(days)</span></td>
+					<td colspan="2"><span class="output" id="TotalTimeOut"></span></td>
+				</tr>
+				<tr>
+					<td class="firstColText">Total Fuel Spent</span></td>
+					<td colspan="2"><span class="output" id="TotalFuelOut"></span></td>
+				</tr>
+			</table>
+		</div>	
+	</div>
+		
+		<div id="MainTable">
+			<table>
+				<tr id="raduoScanType">
+					<td class="scanType" value="Standart" tabindex='1'>Standart</td>
+					<td class="scanType" value="Astro" tabindex='2'>Astro</td>
+					<td class="scanType" value="Combat" tabindex='3'>Combat</td>
+					<td class="shipData">Size Mod</td>
+					<td class="shipData"><input id="SizeMod"></td>
+					<td><span class="output" id="TOTAL_RESULT"></span></td>
+				</tr>
+				<tr>
+					<td colspan="3" id="rangeOut"><span class="output" id="resultRange"></span></td>
+					<td class="shipData">Sensor lvl</td>
+					<td class="shipData"><input id="SensLVL"></td>
+					<td rowspan="2">
+						<input id="Calc_Button" type="button" value="GO!">
+						<input id="Reset_Button" type="button" value="RESET">
+					</td>
+				</tr>
+				<tr>
+					<td><input id="Range_Value"></td>
+					<td>
+						<input id="Range_Number" type="button" value="">
+					</td>
+					<td>
+						<input id="Range_Units" type="button" value="">
+					</td>
+					<td class="shipData">Time spent</td>
+					<td class="shipData"><input id="TimeSpent"></td>
+				</tr>
+			</table>
+			<div id="RadioBox">	
+				<table id="boxOptions">
+					<tr>
+						<td class="titleTable">Observation</td>
+					</tr>
+					<tr>
+						<td><label><input type="checkbox" name="Observation" value="10"><span>In plain sight (Not hidden/camouflaged etc) [+10]</span></label></td>
+					</tr>
+					<tr>
+						<td class="titleTable">In space (cumulative with the plain sight)</td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="in_space" value="2"><span>Silhouetted against a largercelestial body [+2]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="in_space" value="24"><span>Silhouetted against deep space [+24]</span></label></td>
+					</tr>
+					<tr>
+						<td class="titleTable">IR Signature(choose single highest modifier)</td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="0"><span>Minimal power [0]</span></label></td>
+					</tr>	
+	
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="3"><span>Auxiliary power [3]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="4"><span>Fuel cell, solar panels, jet engine[4]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="5"><span>MHD turbine, chemical/HEDM rocket engine [5]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="6"><span>Fission reactor, nuclear heat rocket/nuclear bulb, atmospheric reentry [6]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="7"><span>Anti-m thermal rocket engine, Anti-m reactor,fusion reactor/super fusion reactor, total conv reactor, magsail, lightsail [7]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="8"><span>Fusion pulse drive or fusion rocket engine [8]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="9"><span>Adv fusion pulse, Anti-m plasma, nuclear saltwater rocket, or external pulsed plasma engine [9]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="10"><span>Anti-m plasma torch, Anti-m pion, or fusion torch engine [10]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="11"><span>Anti-m pion torch, super anti-m plasma torch/total conv torch engine [11]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="IR_Signature" value="12"><span>Super conversion torch engine, “cosmic” power plant [12]</span></label></td></td>
+					</tr>
+					<tr>
+						<td class="titleTable"> Reaction engine modifiers</td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="engine_mod" value="0"><span>Rear hull (with drive) [0]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="engine_mod" value="-1"><span>Central hull [-1]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="engine_mod" value="-2"><span>Front hull [-2]</span></label></td>
+					</tr>
+					<tr>
+						<td class="titleTable"> Countermeasures</td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="Countermeasures" value="-10"><span>target is using a cloaking device [-10]</span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="Countermeasures" value="-0"><span>-2*(TL-4) using a stealth hull unless the target has signature modifiers of +5 or more [?]</span></label></td>
+					</tr>	
+				</table>	
+			</div>
+		</div>
+		
+	</body>
+		
+	
+	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

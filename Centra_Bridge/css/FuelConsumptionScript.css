@@ -1,0 +1,106 @@
+#PLANET_CONSUMPTION_FLIP{
+	border: 1px solid #F8F8F8;
+	margin: auto;
+	margin-top: 20px;
+	padding:10px;
+	background-color: #045FB4;
+	text-align: center;
+	width: 30%;
+	border-radius: 30px 10px 30px 10px;
+	cursor: pointer;
+	font-size: 22px;
+	font-weight: bold;
+	color: #E0E0E0;
+	-webkit-user-select: none;
+}
+
+#planetFuel{
+	border: 1px solid #F8F8F8;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 30px 10px 30px 10px;
+	padding: 10px;
+	width: 300px;
+	background-color: #045FB4;
+	display:none;
+	color: white;
+	font-size: 20px;
+}
+
+#Evelocity, #DeltaV, #AccelerationG, #DistanceTotal{
+	width: 70px;
+	text-align: center;
+	border-radius: 10px;
+}
+
+#Evelocity, #DeltaV, #AccelerationG, #DistanceTotal:focus{
+	outline: none;
+}
+
+#FuelButton, #TotalButton, #ResetButtonPlanet, #ResetButtonTime{
+	height: 60px;
+	width: 60px;
+	border-radius: 50px;
+}
+
+#FuelButton, #TotalButton, #ResetButtonPlanet, #ResetButtonTime:focus{
+	outline: none;
+}
+
+#FuelButton, #TotalButton, #ResetButtonPlanet, #ResetButtonTime:hover{
+	cursor: pointer;
+}
+
+
+
+#TOTAL_FUEL_CONSUMPTION_FLIP{
+	border: 1px solid #F8F8F8;
+	margin: auto;
+	margin-top: 20px;
+	padding:10px;
+	background-color: #045FB4;
+	text-align: center;
+	width: 30%;
+	border-radius: 30px 10px 30px 10px;
+	cursor: pointer;
+	color: #E0E0E0;
+	font-size: 22px;
+	font-weight: bold;
+	-webkit-user-select: none;
+}
+
+#totalFuelTime{
+	border: 1px solid #F8F8F8;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 30px 10px 30px 10px;
+	padding: 10px;
+	width: 300px;
+	background-color: #045FB4;
+	display:none;
+	color: white;
+	font-size: 18px;
+}
+
+.firstColText{
+	text-align: center;
+}
+
+.output{
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	color: #E0E0E0;
+	font-size: 21px;
+}
+
+ td { 
+	border-collapse: collapse;
+	border: 1px solid #F8F8F8;
+	border-radius: 20px 10px 20px 10px;
+	text-align: center;
+	height: 50px;
+	width: 150px;
+}
+
+

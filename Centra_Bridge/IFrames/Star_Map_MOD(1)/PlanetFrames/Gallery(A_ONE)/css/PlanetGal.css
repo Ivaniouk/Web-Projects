@@ -1,0 +1,92 @@
+body{
+	/*background-image: url( ../img/mainBack.jpg );*/
+}
+ 
+#mainTable{
+	width: 60%;
+	/*border: 5px solid green;*/
+	/* border-radius: 10px; */
+/* 	margin: auto;
+	margin-top: 2%; */
+	margin: 2% auto 0 auto;
+	padding: 1%;
+	/*background-color: #0066FF;*/
+	/*background-image: url( ../img/TableBack.jpg );*/
+}
+
+#PlanetTable, #planetMenu{
+/* 	background-color: #B0B0B0; */
+	vertical-align: top;
+	display: inline-block;	
+}
+
+#PlanetTable{
+	width: 79%;
+	/* border: 1px solid black; */
+/* 	background-color: #B0B0B0 ; */
+	/* border-radius: 10px; */
+/* 	vertical-align: top;
+	display: inline-block; */
+}
+
+#centralFrame{
+	width: 100%;
+	height: 700px; 
+}
+
+#planetMenu{
+	width: 20%;
+	padding: 0;
+	background-color: #B0B0B0;
+	/* border: 1px solid black; */
+/* 	background-color: #B0B0B0 ;
+	vertical-align: top;
+	display: inline-block; */
+	/* border-radius: 10px; */
+}
+
+ul{
+	margin: auto;
+	width: 70%;
+	list-style-type: none;
+	padding: 5px;
+}
+
+li{
+	padding-bottom: 5px;
+}
+
+.MenuButton{
+	width: 100%;
+	/* border: 1px solid black; */
+	/* border-radius: 10px; */
+	padding: 5px 0 5px 0;
+	text-align: center;
+}
+ 
+.MenuButton:hover{
+	background-color: #006699;
+	cursor: pointer;
+} 
+
+.MenuButton:focus{
+	background-color: #00CCFF;
+	outline: none; /* на фокусі знімає рамку*/
+} 
+
+.border{
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+/******************/
+
+@media screen and (max-width: 1366px){
+	#mainTable{
+		width: 80%;
+/* 		border: 5px solid green;
+		margin: auto;
+		margin-top: 2%; */
+		/*background-color: red;*/
+	}
+}
