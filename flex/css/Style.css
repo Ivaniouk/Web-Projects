@@ -1,0 +1,46 @@
+.my-flex-container{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items:center;
+	justify-content:center;
+	
+	height: 150px;
+	background-color:blue;
+}
+
+.my-flex-block{
+	width: 50px; 
+	height: 50px; 
+	font-size: 40px;
+	text-align: center;
+	line-height: 50px;
+	background-color:white;
+	border: 1px solid green;
+}
+/***************************************/
+
+.my-flex-container-ONE{
+	
+	display: flex;
+	background-color:green;
+	height: 150px;
+	flex-direction: row;
+	justify-content:space-around;
+	align-items:center;
+}
+
+.order-1 {
+    order: 1;
+	flex-grow: 2;
+	margin-left: 25px;
+}
+.order-2 {
+    order: 2;
+	flex-grow: 1;
+}
+.order-3 {
+	flex-grow: 1;
+    order: 3;
+	margin-right: 25px;
+}
