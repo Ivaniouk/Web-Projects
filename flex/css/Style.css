@@ -8,6 +8,7 @@
 	height: 150px;
 	background-color:blue;
 }
+/***************************************/
 
 .my-flex-block{
 	width: 50px; 
@@ -20,8 +21,7 @@
 }
 /***************************************/
 
-.my-flex-container-ONE{
-	
+.my-flex-container-ONE{	
 	display: flex;
 	background-color:green;
 	height: 150px;
@@ -29,7 +29,20 @@
 	justify-content:space-around;
 	align-items:center;
 }
+/***************************************/
+.my-flex-container-TWO{	
+	display: flex;
+	background-color:gray;
+	height: 300px;
+	flex-flow: row nowrap; /*flex-direction и flex-wrap*/	
+	justify-content:flex-end;
+	align-items:flex-end;
+}
 
+
+
+
+/***************************************/
 .order-1 {
     order: 1;
 	flex-grow: 2;
