@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Generator</title>
+	<meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.less" rel="stylesheet/less">
+	  <script>
+		  less = {
+			  env: "development",
+			  async: false,
+			  fileAsync: false,
+			  poll: 1000,
+			  functions: {},
+			  dumpLineNumbers: "comments",
+			  relativeUrls: false,
+			  rootpath: ":/"
+		  };
+	  </script>
+	  <script src="js/less.js" type="text/javascript"></script>
+  </head>
+  <body>
+  <div class="container">
+	  <div class="row">
+		  <div class="mainFormWrapper">
+			  <form class="form form-horizontal" name="form_Main">
+				  <div class="well">
+					  <div class="form-group">
+						  <div class="control-input-name">
+							  <input type="text" class="form-control col-xs-3" name="ForumNick" placeholder="Name"/>
+						  </div>
+						  <div class="btn_rand_style">
+							  <button type="submit" class="btn btn-primary" name="btn_rand">Random</button>
+						  </div>
+					  </div>
+					  <div class="form-group">
+						  <div class="control-select-world">
+							  <select class="selectpicker form-control" name="world">
+								  <option disabled selected>Select Homeworld</option>
+								  <option value="0">Agri World (+Fel, +Str, -Ag -- Wounds: 8 -- Fate: 2 -- Aptitude: Str)</option>
+								  <option value="1">Feral World (+S, +T, -infl -- Wounds: 9 -- Fate: 2 -- Aptitude: T)</option>
+								  <option value="2">Feudal World (+Per, +WS, -Int -- Wounds: 9 -- Fate: 3 -- Aptitude: WS)</option>
+								  <option value="3">Forge World (+T, +Int, -Fel -- Wounds: 8 -- Fate: 3 -- Aptitude: Int)</option>
+								  <option value="4">Frontier World (+BS, +Per, -Fel -- Wounds: 7 -- Fate: 3 -- Aptitude: BS)</option>
+								  <option value="5">Highborn World (+Fel, +Infl, -T -- Wounds: 9 -- Fate: 4 -- Aptitude: Fel)</option>
+								  <option value="6">Hive World (+Ag, +Per, -WP -- Wounds: 8 -- Fate: 2 -- Aptitude: Per)</option>
+								  <option value="7">Shrine World (+WP, +Fel, -Per -- Wounds: 7 -- Fate: 3 -- Aptitude: WP)</option>
+								  <option value="8">Voidborn (+Int, +WP, -S -- Wounds: 7 -- Fate: 3 -- Aptitude: Int)</option>
+							  </select>
+						  </div>
+					  </div>
+					  <div class="form-group">
+						  <div class="control-select-background">
+							  <select class="selectpicker form-control" name="background" disabled>
+								  <option disabled selected>Select Homeworld first</option>
+								  <option value="0">Adepta Sororitas</option>
+								  <option value="1">Adeptus Administratum</option>
+								  <option value="2">Adeptus Arbites</option>
+								  <option value="3">Adeptus Astra Telepathica</option>
+								  <option value="4">Adeptus Mechanicus</option>
+								  <option value="5">Imperial Guard</option>
+								  <option value="6">Outcast</option>
+								  <option value="7">Mutant</option>
+							  </select>
+						  </div>
+					  </div>
+					  <div class="form-group">
+						  <div class="control-select-role">
+							  <select class="selectpicker form-control" name="role" disabled>
+								  <option disabled selected>Select Background first</option>
+								  <option value="0">First</option>
+								  <option value="1">Second</option>
+								  <option value="2">Third</option>
+								  <option value="3">Fourth</option>
+								  <option value="4">Fifth</option>
+								  <option value="5">Sixth</option>
+								  <option value="6">Seventh</option>
+								  <option value="7">Eight</option>
+							  </select>
+						  </div>
+					  </div>
+				  </div>
+			  </form>
+
+		  </div>
+	  </div>
+  </div>
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/DB/ArrayRole.js"></script>
+  <script src="js/DB/ArrayBackground.js"></script>
+  <script src="js/DB/ArrayHomeWorld.js"></script>
+  <script src="js/myFunctions.js"></script>
+  <script src="js/myScript.js"></script>
+  </body>
+</html>

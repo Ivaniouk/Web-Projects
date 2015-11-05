@@ -1,0 +1,80 @@
+@import "bootstrap/bootstrap.less";
+
+// Vars
+@grid-gutter-width:         30px;
+// Mixins
+.mixColumnStyle(@xs, @sm, @md, @lg, @gutter: 30px){
+  .make-xs-column(@xs, @gutter);
+  .make-sm-column(@sm, @gutter);
+  .make-md-column(@md, @gutter);
+  .make-lg-column(@lg, @gutter);
+}
+// Common styles
+.mainFormWrapper{
+  .mixColumnStyle(12, 10, 10, 8);
+  .make-sm-column-offset(1);
+  .make-md-column-offset(1);
+  .make-lg-column-offset(2);
+
+}
+
+.control-input-name{
+  .mixColumnStyle(9, 10, 10, 10);
+}
+/*
+.btn_rand_style{
+  .text-center;
+}*/
+
+.control-select-world{
+  .mixColumnStyle(12, 12, 12, 12);
+}
+
+.control-select-background {
+  .mixColumnStyle(12, 12, 12, 12);
+}
+
+.control-select-role{
+  .mixColumnStyle(12, 12, 12, 12);
+}
+//MEDIA
+
+//Less override
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
