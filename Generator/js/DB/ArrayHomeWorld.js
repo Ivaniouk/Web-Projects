@@ -4,7 +4,7 @@ var AgriWorld = {
     Penalty : ["Ag"],
     Wounds : 8,
     Fate : 2,
-    Aptitude : "Str"
+    Aptitude : "Strength"
 };
 
 var FeralWorld = {
@@ -13,7 +13,7 @@ var FeralWorld = {
     Penalty : ["Infl"],
     Wounds : 9,
     Fate : 2,
-    Aptitude : "T"
+    Aptitude : "Toughness"
 };
 
 var FeudalWorld = {
@@ -31,7 +31,7 @@ var ForgeWorld = {
     Penalty : ["Fel"],
     Wounds : 8,
     Fate : 3,
-    Aptitude : "Int"
+    Aptitude : "Intelligence"
 };
 
 var FrontierWorld = {
@@ -49,7 +49,7 @@ var HighbornWorld = {
     Penalty : ["T"],
     Wounds : 9,
     Fate : 4,
-    Aptitude : "Fel"
+    Aptitude : "Fellowship"
 };
 
 var HiveWorld = {
@@ -58,7 +58,7 @@ var HiveWorld = {
     Penalty : ["WP"],
     Wounds : 8,
     Fate : 2,
-    Aptitude : "Per"
+    Aptitude : "Perception"
 };
 
 var ShrineWorld = {
@@ -67,7 +67,7 @@ var ShrineWorld = {
     Penalty : ["Per"],
     Wounds : 7,
     Fate : 3,
-    Aptitude : "WP"
+    Aptitude : "Willpower"
 };
 
 var Voidborn = {
@@ -76,7 +76,7 @@ var Voidborn = {
     Penalty : ["Str"],
     Wounds : 7,
     Fate : 3,
-    Aptitude : "Int"
+    Aptitude : "Intelligence"
 };
 
 
