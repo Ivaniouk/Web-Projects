@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     $('[name="BackgroundAptitude"]').on('change', function(){
+        ChangeBackgroundAptitudeTable();
         ShowBuildRoleSelect();
     });
 

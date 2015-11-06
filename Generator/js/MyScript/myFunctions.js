@@ -19,6 +19,7 @@ function BuildBackgroundAptitudes(val){
 function OptionBuilder(val){
     for(var i = 0; i < BackgroundArr[val].Aptitude.length; i++){
         var option = document.createElement('option');
+        option.setAttribute("value", i); //jquery???
         option.innerHTML =  "<option>" + BackgroundArr[val].Aptitude[i] + "</option>";
         $('[name="BackgroundAptitude"]').append(option);
     }
@@ -35,4 +36,10 @@ function ShowBuildRoleSelect(){
 function ChangeWorldAptitudeTable(){
     var val = $('[name="world"]').find(":selected").val();
     $(".aptitude-table td:eq(1)").html(WorldArr[val].Aptitude);
+}
+
+function ChangeBackgroundAptitudeTable(){
+    var valBackground = $('[name="background"]').find(":selected").val();
+    var valAptitude = $('[name="BackgroundAptitude"]').find(":selected").val();
+    $(".aptitude-table td:eq(3)").html(BackgroundArr[valBackground].Aptitude[valAptitude]);
 }
