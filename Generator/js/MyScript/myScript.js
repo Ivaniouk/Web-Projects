@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('[name="role"]').on('change', function(){
         //getting info from fields and building tables
+        ChangeRoleAptitudeTable();
     });
 
 
