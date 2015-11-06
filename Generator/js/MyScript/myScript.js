@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('[name="world"]').on('change', function(){
         ShowBuildBackgroundSelect();
+        ChangeWorldAptitudeTable();
     });
 
     $('[name="background"]').on('change', function(){

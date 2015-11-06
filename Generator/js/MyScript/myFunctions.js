@@ -29,3 +29,10 @@ function ShowBuildRoleSelect(){
     roleVar.removeAttr("disabled");
     roleVar.children().first().text("Select Role");
 }
+
+
+//change table
+function ChangeWorldAptitudeTable(){
+    var val = $('[name="world"]').find(":selected").val();
+    $(".aptitude-table td:eq(1)").html(WorldArr[val].Aptitude);
+}
