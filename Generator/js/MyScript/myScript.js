@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
         $('[name="BackgroundAptitude"]').find(":enabled").remove(); //remove previous options
         BuildBackgroundAptitudes(val);
         ShowBackgroundAptitude();
+        //change talent table
+        var valBackground = $('[name="background"]').find(":selected").val();
+        $(".talent-table td:eq(3)").html(BackgroundArr[valBackground].Talents);
     });
 
     $('[name="BackgroundAptitude"]').on('change', function(){
@@ -20,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('[name="role"]').on('change', function(){
         //getting info from fields and building tables
-        ChangeRoleAptitudeTable();
+        var valRole = $('[name="role"]').find(":selected").val();
+        ChangeRoleAptitudeTable(valRole);
+        $(".talent-table td:eq(5)").html(RoleArr[valRole].RoleTalent);
     });
 
 

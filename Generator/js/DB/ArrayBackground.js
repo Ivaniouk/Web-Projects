@@ -1,6 +1,6 @@
 var AdeptaSororitas = {
     Skills : "Athletics, Charm or Intimidate, Common Lore (Adepta Sororitas), Linguistics (High Gothic), Medicae or Parry",
-	Talents : "Weapon Training (Flame or Las, Chain",
+	Talents : "Weapon Training (Flame or Las, Chain)",
     Trait : "none",
 	Equipment : "Hand flamer or laspistol, chainblade, armoured bodyglove, chrono, dataslate, stablight, micro-bead",
     BackkgroundBonus : "Incorruptible Devotion",

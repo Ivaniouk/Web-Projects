@@ -37,16 +37,15 @@ function ChangeWorldAptitudeTable(){
     var val = $('[name="world"]').find(":selected").val();
     $(".aptitude-table td:eq(1)").html(WorldArr[val].Aptitude);
 }
-
+/**********************background Aptitude/Talent table change****************/
 function ChangeBackgroundAptitudeTable(){
     var valBackground = $('[name="background"]').find(":selected").val();
     var valAptitude = $('[name="BackgroundAptitude"]').find(":selected").val();
     $(".aptitude-table td:eq(3)").html(BackgroundArr[valBackground].Aptitude[valAptitude]);
 }
-
-function ChangeRoleAptitudeTable(){
+/*****************************************************************************/
+function ChangeRoleAptitudeTable(valRole){
     var text = "";
-    var valRole = $('[name="role"]').find(":selected").val();
     for(var i = 0; i < RoleArr[valRole].RoleAptitude.length; i++){
         if(i == RoleArr[valRole].RoleAptitude.length - 1){
             text += RoleArr[valRole].RoleAptitude[i] + " ";
@@ -58,7 +57,9 @@ function ChangeRoleAptitudeTable(){
     $(".aptitude-table td:eq(5)").html(text);
 }
 
+function ChnageRoleTalentsTable(valRole){
 
+}
 
 
 
