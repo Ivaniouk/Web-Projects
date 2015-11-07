@@ -92,7 +92,9 @@ function ChnageRoleTalentsTable(valRole){
     $(".talent-table td:eq(5)").html(RoleArr[valRole].RoleTalent);
 }
 
-
+function ChangeEquipmentTable(valBackground){
+    $(".equipment-table td:eq(1)").html(BackgroundArr[valBackground].Equipment);
+}
 
 
 

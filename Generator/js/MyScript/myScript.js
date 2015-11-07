@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
         //change talent table
         var valBackground = $('[name="background"]').find(":selected").val();
         $(".talent-table td:eq(3)").html(BackgroundArr[valBackground].Talents);
+        //change equipment table
+        ChangeEquipmentTable(valBackground);
     });
 
     $('[name="BackgroundAptitude"]').on('change', function(){

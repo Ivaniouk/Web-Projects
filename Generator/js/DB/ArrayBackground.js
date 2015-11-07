@@ -38,7 +38,7 @@ var AdeptusMechanicus = {
     Skills : "Awareness orOperate (Pick One), Common Lore (Adeptus Mechanicus), Logic, Security, Tech-Use",
 	Talents : "Mechadendrite Use (Utility), Weapon Training (Solid Projectile)",
     Trait : "Mechanicus Implants",
-	Equipment : "Autogun orhand cannon, monotask servo-skull (utility) oroptical mechadendrite, Imperial robes, 2 vials of sacred unguents",
+	Equipment : "Autogun orhand cannon, monotask servo-skull (utility) or optical mechadendrite, Imperial robes, 2 vials of sacred unguents",
     BackkgroundBonus : "Replace the Weak Flesh",
     Aptitude : ["Knowledge", "Tech"] //or
 };
@@ -47,7 +47,7 @@ var AdeptusMinistorum = {
     Skills : "Charm, Command, Common Lore (Adeptus Ministorum), Inquiry orScrutiny, Linguistics (High Gothic)",
 	Talents : "Weapon Training (Flame) orWeapon Training (Low-Tech, Solid Projectile)",
     Trait : "none",
-	Equipment : "Hand flamer (orwarhammer and stub revolver), Imperial robes orflak vest, backpack, glow-globe, monotask servo-skull (laud hailer)",
+	Equipment : "Hand flamer (or warhammer and stub revolver), Imperial robes or flak vest, backpack, glow-globe, monotask servo-skull (laud hailer)",
     BackkgroundBonus : "Faith is All",
     Aptitude : ["Leadership", "Social"] //or
 };
@@ -56,7 +56,7 @@ var ImperialGuard = {
     Skills : "Athletics, Command, Common Lore (Imperial Guard), Medicae or Operate (Surface), Navigate (Surface)",
 	Talents : "Weapon Training (Las, Low-Tech)",
     Trait : "none",
-	Equipment : "Lasgun (orlaspistol and sword), combat vest, Imperial Guard flak armour, grapnel and line, 12 lho sticks, magnoculars",
+	Equipment : "Lasgun (or laspistol and sword), combat vest, Imperial Guard flak armour, grapnel and line, 12 lho sticks, magnoculars",
     BackkgroundBonus : "Hammer of the Emperor",
     Aptitude : ["Fieldcraft", "Leadership"] //or
 };
@@ -74,7 +74,7 @@ var Mutant = {
     Skills : "Acrobatics orAthletics, Awareness, Deceive orIntimidate, Forbidden Lore (Mutants), Survival",
 	Talents : "Weapon Training (Low-Tech, Solid Projectile)",
     Trait : "One of the following: Amphibious, Dark-sight, Natural Weapons, Sonar Sense, Sturdy, Toxic (1), Unnatural Agility (1), Unnatural Strength (1), or Unnatural Toughness (1)",
-	Equipment : "Shotgun (orstub revolver and great weapon), grapnel and line, heavy leathers, combat vest, 2 doses of stimm",
+	Equipment : "Shotgun (or stub revolver and great weapon), grapnel and line, heavy leathers, combat vest, 2 doses of stimm",
     BackkgroundBonus : "Twisted Flesh",
     Aptitude : ["Fieldcraft", "Ofence"] //or
 };
