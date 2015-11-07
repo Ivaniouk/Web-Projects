@@ -18,8 +18,8 @@ function BuildBackgroundAptitudes(val){
 
 function OptionBuilder(val){
     for(var i = 0; i < BackgroundArr[val].Aptitude.length; i++){
-        var option = document.createElement('option');
-        option.setAttribute("value", i); //jquery???
+        var option = document.createElement("option");
+        option.setAttribute("value", i);
         option.innerHTML =  "<option>" + BackgroundArr[val].Aptitude[i] + "</option>";
         $('[name="BackgroundAptitude"]').append(option);
     }
@@ -31,6 +31,28 @@ function ShowBuildRoleSelect(){
     roleVar.children().first().text("Select Role");
 }
 
+function AssasinSelectShow(){
+    var div = document.createElement("div");
+    div.setAttribute("class", "control-select-assasin-aptitude"); //add wrapper class style
+
+    var select = document.createElement("select");
+    select.setAttribute("class", "selectpicker form-control");
+    select.setAttribute("name", "assasin-select");
+
+    var option = document.createElement("option");
+    option.setAttribute("value", 0);
+    option.innerHTML ="WS";
+
+    var option2 = document.createElement("option");
+    option2.setAttribute("value", 1);
+    option2.innerHTML = "BS";
+
+    select.add(option);
+    select.add(option2);
+    div.append(select);
+
+    $(".form-group:eq(3)").append(div);
+}
 
 //change table
 function ChangeWorldAptitudeTable(){

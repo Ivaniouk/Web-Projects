@@ -22,10 +22,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     $('[name="role"]').on('change', function(){
-        //getting info from fields and building tables
         var valRole = $('[name="role"]').find(":selected").val();
-        ChangeRoleAptitudeTable(valRole);
-        $(".talent-table td:eq(5)").html(RoleArr[valRole].RoleTalent);
+        if(valRole == 0){
+            //alert("assasin");
+            AssasinSelectShow();
+        } else {
+            ChangeRoleAptitudeTable(valRole);
+            $(".talent-table td:eq(5)").html(RoleArr[valRole].RoleTalent);
+        }
+
     });
 
 
