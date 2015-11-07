@@ -40,18 +40,27 @@ function AssasinSelectShow(){
     select.setAttribute("name", "assasin-select");
 
     var option = document.createElement("option");
-    option.setAttribute("value", 0);
-    option.innerHTML ="WS";
+    option.innerHTML ="<option selected disabled>Aptitude</option>";
+
+    var option1 = document.createElement("option");
+    option1.innerHTML ="<option value='0'>WS</option>";
 
     var option2 = document.createElement("option");
-    option2.setAttribute("value", 1);
-    option2.innerHTML = "BS";
+    option2.innerHTML = "<option value='1'>BS</option>";
 
     select.add(option);
+    select.add(option1);
     select.add(option2);
-    div.append(select);
+    //div.add(select);
 
     $(".form-group:eq(3)").append(div);
+    $(".control-select-assasin-aptitude").append(select);
+}
+
+function ClearAssasinAdditionSelect(){
+    //$(".talent-table td:eq(5)").html(RoleArr[valRole].RoleTalent);
+    $(".control-select-assasin-aptitude").remove();
+
 }
 
 //change table
@@ -80,7 +89,7 @@ function ChangeRoleAptitudeTable(valRole){
 }
 
 function ChnageRoleTalentsTable(valRole){
-
+    $(".talent-table td:eq(5)").html(RoleArr[valRole].RoleTalent);
 }
 
 

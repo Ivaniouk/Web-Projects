@@ -24,13 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
     $('[name="role"]').on('change', function(){
         var valRole = $('[name="role"]').find(":selected").val();
         if(valRole == 0){
-            //alert("assasin");
-            AssasinSelectShow();
+            //$('[name="role"]').attr("class", "control-select-role-small form-control");
+            //AssasinSelectShow();
+            ChangeRoleAptitudeTable(valRole);
         } else {
             ChangeRoleAptitudeTable(valRole);
-            $(".talent-table td:eq(5)").html(RoleArr[valRole].RoleTalent);
+            ClearAssasinAdditionSelect();
+            $('[name="role"]').attr("class", "control-select-role form-control");
         }
-
+        ChnageRoleTalentsTable(valRole)
     });
 
 
