@@ -73,12 +73,9 @@ function AddNewRow() {
     var $trMain = $('<tr></tr>');
     var $td = $('<td></td>');
     var $td2 = $('<td></td>');
-
     $trMain.append($td);
     $trMain.append($td2);
-
     $(".aptitude-table").append($trMain);
-
 }
 
 function AddNewStatSelect(){
@@ -98,6 +95,7 @@ function FindSimilarApptitudes(valRole, addditional){
     var arrayRoleAptTMP = RoleArr[valRole].RoleAptitude;
     var worldApt = $(".aptitude-table td:eq(1)").html();
     var backgroundApt = $(".aptitude-table td:eq(3)").html();
+    var rowTrigger = 0;
 
     if(addditional != ""){
         arrayRoleAptTMP.push(addditional);
@@ -106,6 +104,10 @@ function FindSimilarApptitudes(valRole, addditional){
         if(arrayRoleAptTMP[i] == worldApt || arrayRoleAptTMP[i] == backgroundApt){
             arrayRoleAptTMP.splice(i, 1);
             i -= 1;
+            if(rowTrigger == 0){
+                AddNewRow();
+                rowTrigger = 1;
+            }
             AddNewStatSelect();
         }
     }

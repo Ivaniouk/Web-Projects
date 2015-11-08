@@ -27,13 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var valRole = $('[name="role"]').find(":selected").val();
         if(valRole == 0){
             AssasinSelectShow();
-            AddNewRow();
+           // AddNewRow();
         } else {
-            AddNewRow();
+           // AddNewRow();
             FindSimilarApptitudes(valRole, "");
         }
         //ChangeRoleAptitudeTable(valRole);
-
         ChnageRoleTalentsTable(valRole);
     });
 
