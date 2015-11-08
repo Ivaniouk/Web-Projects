@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
             //$('[name="role"]').attr("class", "control-select-role-small form-control");
             AssasinSelectShow();
             ChangeRoleAptitudeTable(valRole);
+            AddNewRow();
+            AddNewStatSelect();
             AddNewStatSelect();
         } else {
             ChangeRoleAptitudeTable(valRole);

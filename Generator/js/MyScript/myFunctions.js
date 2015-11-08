@@ -71,20 +71,11 @@ function ChangeEquipmentTable(valBackground){
 /*********************Bonus Stats********************************************/
 
 
-function AddNewStatSelect() {
-    var $select = $('<select></select>>');
-    $select.attr("class", "selectpicker form-control bonus-aptitude");
-
-    for(var i = 0; i < arrStat.length; i++){
-        var $option = $("<option>" + arrStat[i] + "</option>");
-        $select.append($option);
-    }
-
+function AddNewRow() {
     var $trMain = $('<tr></tr>');
     var $td = $('<td></td>');
     var $td2 = $('<td></td>');
 
-    $td2.append($select);
     $trMain.append($td);
     $trMain.append($td2);
 
@@ -93,6 +84,16 @@ function AddNewStatSelect() {
 }
 
 
+function AddNewStatSelect(){
+    var $select = $('<select></select>');
+    $select.attr("class", "selectpicker form-control bonus-aptitude");
+
+    for(var i = 0; i < arrStat.length; i++){
+        var $option = $("<option>" + arrStat[i] + "</option>");
+        $select.append($option);
+    }
+    $(".aptitude-table td:eq(7)").append($select);
+}
 
 
 
