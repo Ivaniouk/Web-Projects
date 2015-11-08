@@ -26,16 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
     $('[name="role"]').on('change', function(){
         var valRole = $('[name="role"]').find(":selected").val();
         if(valRole == 0){
-            //$('[name="role"]').attr("class", "control-select-role-small form-control");
             AssasinSelectShow();
-            ChangeRoleAptitudeTable(valRole);
-            AddNewRow();
-            AddNewStatSelect();
-            AddNewStatSelect();
         } else {
-            ChangeRoleAptitudeTable(valRole);
+            AddNewRow();
+            FindSimilarApptitudes(valRole);
         }
-        ChnageRoleTalentsTable(valRole);
+        //ChangeRoleAptitudeTable(valRole);
+
+        //ChnageRoleTalentsTable(valRole);
     });
 
 

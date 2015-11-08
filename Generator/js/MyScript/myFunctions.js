@@ -47,14 +47,14 @@ function ChangeBackgroundAptitudeTable(){
     $(".aptitude-table td:eq(3)").html(BackgroundArr[valBackground].Aptitude[valAptitude]);
 }
 /************************Table************************************/
-function ChangeRoleAptitudeTable(valRole){
+function ChangeRoleAptitudeTable(arr){
     var text = "";
-    for(var i = 0; i < RoleArr[valRole].RoleAptitude.length; i++){
-        if(i == RoleArr[valRole].RoleAptitude.length - 1){
-            text += RoleArr[valRole].RoleAptitude[i] + " ";
+    for(var i = 0; i < arr.length; i++){
+        if(i == arr.length - 1){
+            text += arr[i] + " ";
         }
         else{
-            text += RoleArr[valRole].RoleAptitude[i] + ", ";
+            text += arr[i] + ", ";
         }
     }
     $(".aptitude-table td:eq(5)").html(text);
@@ -69,8 +69,6 @@ function ChangeEquipmentTable(valBackground){
 }
 
 /*********************Bonus Stats********************************************/
-
-
 function AddNewRow() {
     var $trMain = $('<tr></tr>');
     var $td = $('<td></td>');
@@ -82,7 +80,6 @@ function AddNewRow() {
     $(".aptitude-table").append($trMain);
 
 }
-
 
 function AddNewStatSelect(){
     var $select = $('<select></select>');
@@ -97,7 +94,20 @@ function AddNewStatSelect(){
 
 
 
+function FindSimilarApptitudes(valRole){
+    var arrayRoleAptTMP = RoleArr[valRole].RoleAptitude;
+    var worldApt = $(".aptitude-table td:eq(1)").html();
+    var backgroundApt = $(".aptitude-table td:eq(3)").html();
 
+    for(var i = 0; i < arrayRoleAptTMP.length; i++){
+        if(arrayRoleAptTMP[i] == worldApt || arrayRoleAptTMP[i] == backgroundApt){
+            arrayRoleAptTMP.splice(i, 1);
+            i -= 1;
+            AddNewStatSelect();
+        }
+    }
+    ChangeRoleAptitudeTable(arrayRoleAptTMP);
+}
 
 
 
