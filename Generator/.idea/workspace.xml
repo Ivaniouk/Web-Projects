@@ -25,8 +25,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.423077">
-              <caret line="144" column="81" selection-start-line="144" selection-start-column="81" selection-end-line="144" selection-end-column="81" />
+            <state vertical-scroll-proportion="-17.653847">
+              <caret line="94" column="78" selection-start-line="94" selection-start-column="78" selection-end-line="94" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -35,8 +35,8 @@
       <file leaf-file-name="style.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="49" column="26" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="26" />
+            <state vertical-scroll-proportion="-8.0">
+              <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -46,17 +46,17 @@
         <entry file="file://$PROJECT_DIR$/js/MyScript/myScript.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="42" />
+              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myFunctions.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="myFunctions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/MyScript/myFunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="94" column="45" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.20044793">
+              <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -72,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArrayBackground.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ArrayBackground.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/DB/ArrayBackground.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7905935">
+            <state vertical-scroll-proportion="0.0">
               <caret line="76" column="75" selection-start-line="76" selection-start-column="75" selection-end-line="76" selection-end-column="75" />
               <folding />
             </state>
@@ -102,11 +102,11 @@
       <list>
         <option value="$PROJECT_DIR$/js/DB/ArrayHomeWorld.js" />
         <option value="$PROJECT_DIR$/js/DB/ArrayRole.js" />
+        <option value="$PROJECT_DIR$/js/DB/ArrayBackground.js" />
         <option value="$PROJECT_DIR$/css/style.less" />
         <option value="$PROJECT_DIR$/js/MyScript/myScript.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/MyScript/myFunctions.js" />
-        <option value="$PROJECT_DIR$/js/DB/ArrayBackground.js" />
       </list>
     </option>
   </component>
@@ -292,7 +292,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1688" height="1014" extended-state="7" />
+    <frame x="-4" y="-4" width="1688" height="1014" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16071428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -713,38 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.423077">
-          <caret line="144" column="81" selection-start-line="144" selection-start-column="81" selection-end-line="144" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="26" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/MyScript/myScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/MyScript/myFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="94" column="45" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/DB/ArrayHomeWorld.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -755,8 +723,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/DB/ArrayBackground.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7905935">
+        <state vertical-scroll-proportion="0.0">
           <caret line="76" column="75" selection-start-line="76" selection-start-column="75" selection-end-line="76" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/MyScript/myScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0">
+          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.653847">
+          <caret line="94" column="78" selection-start-line="94" selection-start-column="78" selection-end-line="94" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/MyScript/myFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20044793">
+          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
           <folding />
         </state>
       </provider>

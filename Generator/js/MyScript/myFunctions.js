@@ -32,29 +32,7 @@ function ShowBuildRoleSelect(){
 }
 
 function AssasinSelectShow(){
-    var div = document.createElement("div");
-    div.setAttribute("class", "control-select-assasin-aptitude"); //add wrapper class style
-
-    var select = document.createElement("select");
-    select.setAttribute("class", "selectpicker form-control");
-    select.setAttribute("name", "assasin-select");
-
-    var option = document.createElement("option");
-    option.innerHTML ="<option selected disabled>Aptitude</option>";
-
-    var option1 = document.createElement("option");
-    option1.innerHTML ="<option value='0'>WS</option>";
-
-    var option2 = document.createElement("option");
-    option2.innerHTML = "<option value='1'>BS</option>";
-
-    select.add(option);
-    select.add(option1);
-    select.add(option2);
-    //div.add(select);
-
-    $(".form-group:eq(3)").append(div);
-    $(".control-select-assasin-aptitude").append(select);
+   $('[name="assasin-select"]').removeAttr("disabled");
 }
 
 function ClearAssasinAdditionSelect(){

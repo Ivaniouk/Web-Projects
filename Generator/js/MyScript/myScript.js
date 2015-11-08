@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var valRole = $('[name="role"]').find(":selected").val();
         if(valRole == 0){
             //$('[name="role"]').attr("class", "control-select-role-small form-control");
-            //AssasinSelectShow();
+            AssasinSelectShow();
             ChangeRoleAptitudeTable(valRole);
         } else {
             ChangeRoleAptitudeTable(valRole);
