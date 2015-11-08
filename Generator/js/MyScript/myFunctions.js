@@ -94,11 +94,14 @@ function AddNewStatSelect(){
 
 
 
-function FindSimilarApptitudes(valRole){
+function FindSimilarApptitudes(valRole, addditional){
     var arrayRoleAptTMP = RoleArr[valRole].RoleAptitude;
     var worldApt = $(".aptitude-table td:eq(1)").html();
     var backgroundApt = $(".aptitude-table td:eq(3)").html();
 
+    if(addditional != ""){
+        arrayRoleAptTMP.push(addditional);
+    }
     for(var i = 0; i < arrayRoleAptTMP.length; i++){
         if(arrayRoleAptTMP[i] == worldApt || arrayRoleAptTMP[i] == backgroundApt){
             arrayRoleAptTMP.splice(i, 1);

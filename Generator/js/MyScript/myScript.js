@@ -27,14 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
         var valRole = $('[name="role"]').find(":selected").val();
         if(valRole == 0){
             AssasinSelectShow();
+            AddNewRow();
         } else {
             AddNewRow();
-            FindSimilarApptitudes(valRole);
+            FindSimilarApptitudes(valRole, "");
         }
         //ChangeRoleAptitudeTable(valRole);
 
         //ChnageRoleTalentsTable(valRole);
     });
 
-
+    $('[name="assasin-select"]').on('change', function(){
+        var valRole = $('[name="role"]').find(":selected").val();
+        var assasinApt = $('[name="assasin-select"]').find(":selected").html();
+        FindSimilarApptitudes(valRole, assasinApt);
+    });
 });
