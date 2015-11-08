@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         //ChangeRoleAptitudeTable(valRole);
 
-        //ChnageRoleTalentsTable(valRole);
+        ChnageRoleTalentsTable(valRole);
     });
 
     $('[name="assasin-select"]').on('change', function(){
