@@ -1,0 +1,1 @@
+var arrStat = ["BS", "WS", "Strength", "Toughness", "Agility", "Intelligence", "Perception", "Willpower", "Fellowship"];

@@ -35,12 +35,6 @@ function AssasinSelectShow(){
    $('[name="assasin-select"]').removeAttr("disabled");
 }
 
-function ClearAssasinAdditionSelect(){
-    //$(".talent-table td:eq(5)").html(RoleArr[valRole].RoleTalent);
-    $(".control-select-assasin-aptitude").remove();
-
-}
-
 //change table
 function ChangeWorldAptitudeTable(){
     var val = $('[name="world"]').find(":selected").val();
@@ -52,7 +46,7 @@ function ChangeBackgroundAptitudeTable(){
     var valAptitude = $('[name="BackgroundAptitude"]').find(":selected").val();
     $(".aptitude-table td:eq(3)").html(BackgroundArr[valBackground].Aptitude[valAptitude]);
 }
-/*****************************************************************************/
+/************************Table************************************/
 function ChangeRoleAptitudeTable(valRole){
     var text = "";
     for(var i = 0; i < RoleArr[valRole].RoleAptitude.length; i++){
@@ -74,11 +68,29 @@ function ChangeEquipmentTable(valBackground){
     $(".equipment-table td:eq(1)").html(BackgroundArr[valBackground].Equipment);
 }
 
+/*********************Bonus Stats********************************************/
 
 
+function AddNewStatSelect() {
+    var $select = $('<select></select>>');
+    $select.attr("class", "selectpicker form-control bonus-aptitude");
 
+    for(var i = 0; i < arrStat.length; i++){
+        var $option = $("<option>" + arrStat[i] + "</option>");
+        $select.append($option);
+    }
 
+    var $trMain = $('<tr></tr>');
+    var $td = $('<td></td>');
+    var $td2 = $('<td></td>');
 
+    $td2.append($select);
+    $trMain.append($td);
+    $trMain.append($td2);
+
+    $(".aptitude-table").append($trMain);
+
+}
 
 
 

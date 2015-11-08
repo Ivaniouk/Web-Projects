@@ -29,12 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
             //$('[name="role"]').attr("class", "control-select-role-small form-control");
             AssasinSelectShow();
             ChangeRoleAptitudeTable(valRole);
+            AddNewStatSelect();
         } else {
             ChangeRoleAptitudeTable(valRole);
-            ClearAssasinAdditionSelect();
-            $('[name="role"]').attr("class", "control-select-role form-control");
         }
-        ChnageRoleTalentsTable(valRole)
+        ChnageRoleTalentsTable(valRole);
     });
 
 
