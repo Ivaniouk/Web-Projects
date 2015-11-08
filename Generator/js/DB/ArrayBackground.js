@@ -38,7 +38,7 @@ var AdeptusMechanicus = {
     Skills : "Awareness orOperate (Pick One), Common Lore (Adeptus Mechanicus), Logic, Security, Tech-Use",
 	Talents : "Mechadendrite Use (Utility), Weapon Training (Solid Projectile)",
     Trait : "Mechanicus Implants",
-	Equipment : "Autogun orhand cannon, monotask servo-skull (utility) or optical mechadendrite, Imperial robes, 2 vials of sacred unguents",
+	Equipment : "Autogun or hand cannon, monotask servo-skull (utility) or optical mechadendrite, Imperial robes, 2 vials of sacred unguents",
     BackkgroundBonus : "Replace the Weak Flesh",
     Aptitude : ["Knowledge", "Tech"] //or
 };
