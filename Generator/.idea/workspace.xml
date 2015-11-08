@@ -55,8 +55,8 @@
       <file leaf-file-name="myFunctions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/MyScript/myFunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6573348">
-              <caret line="110" column="28" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.60022396">
+              <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -116,8 +116,8 @@
         <option value="$PROJECT_DIR$/css/style.less" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/DB/ArrayBackground.js" />
-        <option value="$PROJECT_DIR$/js/MyScript/myFunctions.js" />
         <option value="$PROJECT_DIR$/js/MyScript/myScript.js" />
+        <option value="$PROJECT_DIR$/js/MyScript/myFunctions.js" />
       </list>
     </option>
   </component>
@@ -766,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/MyScript/myFunctions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6573348">
-          <caret line="110" column="28" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.60022396">
+          <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
           <folding />
         </state>
       </provider>

@@ -95,7 +95,7 @@ function FindSimilarApptitudes(valRole, addditional){
     var arrayRoleAptTMP = RoleArr[valRole].RoleAptitude;
     var worldApt = $(".aptitude-table td:eq(1)").html();
     var backgroundApt = $(".aptitude-table td:eq(3)").html();
-    var rowTrigger = 0;
+    var rowTrigger = false;
 
     if(addditional != ""){
         arrayRoleAptTMP.push(addditional);
@@ -104,9 +104,9 @@ function FindSimilarApptitudes(valRole, addditional){
         if(arrayRoleAptTMP[i] == worldApt || arrayRoleAptTMP[i] == backgroundApt){
             arrayRoleAptTMP.splice(i, 1);
             i -= 1;
-            if(rowTrigger == 0){
+            if(rowTrigger == false){
                 AddNewRow();
-                rowTrigger = 1;
+                rowTrigger = true;
             }
             AddNewStatSelect();
         }
