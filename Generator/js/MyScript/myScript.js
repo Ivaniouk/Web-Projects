@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    $('[name="btn_rand"]').on('click', function(){
+        var gender = $('[name="gender"]').find(":selected").html();
+        SetRandomName(gender);
+        return false;
+    });
+
     $('[name="world"]').on('change', function(){
         ShowBuildBackgroundSelect();
         ChangeWorldAptitudeTable();

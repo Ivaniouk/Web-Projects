@@ -114,10 +114,19 @@ function FindSimilarApptitudes(valRole, addditional){
 }
 
 
+/*********Names**************/
+function GetRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
-
-
-
+function SetRandomName(gender){
+    var rand = GetRandomInt(0, maleNamesArr.length);
+    if(gender === "Male"){
+        $('[name="ForumNick"]').val(maleNamesArr[rand]);
+    }else{
+        $('[name="ForumNick"]').val(femaleNamesArr[rand]);
+    }
+}
 
 
 
