@@ -1,3 +1,5 @@
+//global var
+var roleActive = false;
 //Background functions
 function ShowBuildBackgroundSelect(){
     var backgroundVar =  $('[name="background"]');
@@ -88,7 +90,8 @@ function AddNewStatSelect(){
     $(".aptitude-table td:eq(7)").append($select);
 }
 
-function FindSimilarApptitudes(valRole, addditional){
+function FindSimilarApptitudes(addditional){
+    var valRole = $('[name="role"]').find(":selected").val();
     var arrayRoleAptTMP = RoleArr[valRole].RoleAptitude;
     var worldApt = $(".aptitude-table td:eq(1)").html();
     var backgroundApt = $(".aptitude-table td:eq(3)").html();

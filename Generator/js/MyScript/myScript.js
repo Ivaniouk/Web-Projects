@@ -30,22 +30,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     $('[name="role"]').on('change', function(){
+        roleActive = true;
         $('[name="aptitudeRow"]').remove();
         var valRole = $('[name="role"]').find(":selected").val();
         if(valRole == 0){
             AssasinSelectShow();
-           // AddNewRow();
         } else {
-           // AddNewRow();
-            FindSimilarApptitudes(valRole, "");
+            FindSimilarApptitudes("");
         }
-        //ChangeRoleAptitudeTable(valRole);
         ChnageRoleTalentsTable(valRole);
     });
 
     $('[name="assasin-select"]').on('change', function(){
         var valRole = $('[name="role"]').find(":selected").val();
         var assasinApt = $('[name="assasin-select"]').find(":selected").html();
-        FindSimilarApptitudes(valRole, assasinApt);
+        FindSimilarApptitudes(assasinApt);
     });
 });
