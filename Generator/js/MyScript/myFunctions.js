@@ -80,7 +80,7 @@ function AddNewRow() {
 function AddNewStatSelect(){
     var $select = $('<select></select>');
     $select.attr("class", "selectpicker form-control bonus-aptitude");
-
+    $select.append("<option disabled selected>Aptitude</option>");
     for(var i = 0; i < arrStat.length; i++){
         var $option = $("<option>" + arrStat[i] + "</option>");
         $select.append($option);
