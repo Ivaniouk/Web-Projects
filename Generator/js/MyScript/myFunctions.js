@@ -12,7 +12,6 @@ function ShowBackgroundAptitude(){
 }
 
 function BuildBackgroundAptitudes(val){
-    //find way to transfer names into jQuery
     OptionBuilder(val);
 }
 
