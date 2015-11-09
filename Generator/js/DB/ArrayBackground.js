@@ -18,7 +18,7 @@ var AdeptusAdministratum = {
 
 var AdeptusArbites = {
     Skills : "Awareness, Common Lore (Adeptus Arbites, Underworld), Inquiry orInterrogation, Intimidate, Scrutiny",
-	Talents : "Weapon Training (Shock orSolid Projectile)",
+	Talents : "Weapon Training (Shock or Solid Projectile)",
     Trait : "none",
 	Equipment : "Shotgun or shock maul, Enforcer light carapace armour orcarapace chestplate, 3 doses of stimm, manacles, 12 lho sticks",
     BackkgroundBonus : "The Face of the Law",
