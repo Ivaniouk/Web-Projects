@@ -71,7 +71,7 @@ var Outcast = {
 };
 
 var Mutant = {
-    Skills : "Acrobatics orAthletics, Awareness, Deceive orIntimidate, Forbidden Lore (Mutants), Survival",
+    Skills : "Acrobatics or Athletics, Awareness, Deceive or Intimidate, Forbidden Lore (Mutants), Survival",
 	Talents : "Weapon Training (Low-Tech, Solid Projectile)",
     Trait : "One of the following: Amphibious, Dark-sight, Natural Weapons, Sonar Sense, Sturdy, Toxic (1), Unnatural Agility (1), Unnatural Strength (1), or Unnatural Toughness (1)",
 	Equipment : "Shotgun (or stub revolver and great weapon), grapnel and line, heavy leathers, combat vest, 2 doses of stimm",

@@ -69,7 +69,7 @@ function ChangeEquipmentTable(valBackground){
 
 /*********************Bonus Stats********************************************/
 function AddNewRow() {
-    var $trMain = $('<tr></tr>');
+    var $trMain = $('<tr name="aptitudeRow"></tr>');
     var $td = $('<td></td>');
     var $td2 = $('<td></td>');
     $trMain.append($td);
@@ -87,8 +87,6 @@ function AddNewStatSelect(){
     }
     $(".aptitude-table td:eq(7)").append($select);
 }
-
-
 
 function FindSimilarApptitudes(valRole, addditional){
     var arrayRoleAptTMP = RoleArr[valRole].RoleAptitude;
@@ -112,7 +110,6 @@ function FindSimilarApptitudes(valRole, addditional){
     }
     ChangeRoleAptitudeTable(arrayRoleAptTMP);
 }
-
 
 /*********Names**************/
 function GetRandomInt(min, max) {

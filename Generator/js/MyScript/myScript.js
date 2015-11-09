@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     $('[name="role"]').on('change', function(){
+        $('[name="aptitudeRow"]').remove();
         var valRole = $('[name="role"]').find(":selected").val();
         if(valRole == 0){
             AssasinSelectShow();
