@@ -8,7 +8,7 @@ var maleNamesArr = ["Arz", "Aaz", "Azararch", "Alaric", "Able", "Barik", "Canto"
                     "Mok", "Lazarus", "Marius", "Lemant", "Ills", "Narl", "Mordicai", "Noctine", "Magnus", "Jaq",
                     "Oort", "Nicodemus", "Octavius", "Naveen", "Lax", "Pak", "Quinten", "Partheos", "Oscarl", "Meng",
                     "Ragaa", "Rhaban", "Quellus", "Perrin", "Nast", "Salc", "Silvanto", "Ramalies", "Romulus", "Reddin",
-                    "Tarl" "Titus" "Severan" "Sabanth" "Scab"  "Volc" "Uriah" "Tyruss" "Urial" "Shiv", "Yarl", "Xerxes",
+                    "Tarl", "Titus", "Severan", "Sabanth", "Scab",  "Volc", "Uriah", "Tyruss", "Urial", "Shiv", "Yarl", "Xerxes",
                     "Ventium", "Wolfe", "Tranq",  "Zel", "Zariel", "Zarath", "Zarkov", "Wurm"];
 
 var femaleNamesArr = ["Arda", "Acadi", "Araleen", "Aennisse", "Alta", "Cil", "Balida", "Castella", "Bianca", "Blue",
