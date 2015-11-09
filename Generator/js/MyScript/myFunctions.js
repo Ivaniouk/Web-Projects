@@ -1,5 +1,6 @@
 //global var
 var roleActive = false;
+var assasinActive = false;
 //Background functions
 function ShowBuildBackgroundSelect(){
     var backgroundVar =  $('[name="background"]');
@@ -90,15 +91,16 @@ function AddNewStatSelect(){
     $(".aptitude-table td:eq(7)").append($select);
 }
 
-function FindSimilarApptitudes(addditional){
+function FindSimilarApptitudes(){
     var valRole = $('[name="role"]').find(":selected").val();
     var arrayRoleAptTMP = RoleArr[valRole].RoleAptitude;
     var worldApt = $(".aptitude-table td:eq(1)").html();
     var backgroundApt = $(".aptitude-table td:eq(3)").html();
     var rowTrigger = false;
 
-    if(addditional != ""){
-        arrayRoleAptTMP.push(addditional);
+    if(assasinActive){
+        var assasinApt = $('[name="assasin-select"]').find(":selected").html();
+        arrayRoleAptTMP.push(assasinApt);
     }
     for(var i = 0; i < arrayRoleAptTMP.length; i++){
         if(arrayRoleAptTMP[i] == worldApt || arrayRoleAptTMP[i] == backgroundApt){
