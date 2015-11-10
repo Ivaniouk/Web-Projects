@@ -94,7 +94,7 @@ function AddNewStatSelect(){
 //TODO trouble with the triggers
 function FindSimilarApptitudes(){
     var valRole = $('[name="role"]').find(":selected").val();
-    var arrayRoleAptTMP = RoleArr[valRole].RoleAptitude;
+    var arrayRoleAptTMP = RoleArr[valRole].RoleAptitude.slice();
     var worldApt = $(".aptitude-table td:eq(1)").html();
     var backgroundApt = $(".aptitude-table td:eq(3)").html();
     $('[name="aptitudeRow"]').remove();
