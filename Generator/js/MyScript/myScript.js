@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ShowBuildBackgroundSelect();
         ChangeWorldAptitudeTable();
         if(roleActive){
+            console.log("world");
             FindSimilarApptitudes();
         }
     });
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ShowBackgroundAptitude();
         var valBackground = $('[name="background"]').find(":selected").val();
         $(".talent-table td:eq(3)").html(BackgroundArr[valBackground].Talents);
+        $(".skill-table td:eq(1)").html(BackgroundArr[valBackground].Skills);
         ChangeEquipmentTable(valBackground);
     });
 
@@ -35,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('[name="role"]').on('change', function(){
         roleActive = true;
-        $('[name="aptitudeRow"]').remove();
         var valRole = $('[name="role"]').find(":selected").val();
         if(valRole == 0){
             AssasinSelectShow();
