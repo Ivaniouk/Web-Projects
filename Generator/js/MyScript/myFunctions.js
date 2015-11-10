@@ -91,7 +91,7 @@ function AddNewStatSelect(){
     }
     $(".aptitude-table td:eq(7)").append($select);
 }
-//TODO trouble with the triggers
+
 function FindSimilarApptitudes(){
     var valRole = $('[name="role"]').find(":selected").val();
     var arrayRoleAptTMP = RoleArr[valRole].RoleAptitude.slice();
@@ -115,7 +115,6 @@ function FindSimilarApptitudes(){
     }
     rowTrigger = false;
     ChangeRoleAptitudeTable(arrayRoleAptTMP);
-    arrayRoleAptTMP = "";
 }
 
 /*********Names**************/
