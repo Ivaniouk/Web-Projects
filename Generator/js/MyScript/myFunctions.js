@@ -20,11 +20,11 @@ function ShowBackgroundAptitude(){
     backgroundAptitudeVar.removeAttr("disabled");
 }
 /**
- * calls BackgroundOptionBuilder
+ * calls BackgroundOptionBuilder, always selects first option
  */
 function BuildBackgroundAptitudes(val){
     BackgroundOptionBuilder(val);
-    $("select option[value='AptitudeSelected']").attr("selected","selected");
+    $("select option[value='AptitudeSelected']").attr("selected", "selected");
 }
 /**
  * building background aptitude option select options
