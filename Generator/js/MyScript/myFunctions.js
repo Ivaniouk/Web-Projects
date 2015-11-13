@@ -3,8 +3,9 @@ var roleActive = false;
 var assasinActive = false;
 var rowTrigger = false;
 //Background functions
+//TODO make ONE "disabled attribute" function
 /**
- * removes disabled attribute from {background} field, changes first children text
+ * disabled attribute from {background} field, changes first children text
  */
 function ShowBuildBackgroundSelect(){
     var backgroundVar =  $('[name="background"]');
