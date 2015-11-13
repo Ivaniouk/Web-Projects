@@ -22,9 +22,9 @@ function ShowBackgroundAptitude(){
 /**
  * calls BackgroundOptionBuilder
  */
-//TODO select first option in a field after change
 function BuildBackgroundAptitudes(val){
     BackgroundOptionBuilder(val);
+    $("select option[value='AptitudeSelected']").attr("selected","selected");
 }
 /**
  * building background aptitude option select options
