@@ -3,23 +3,33 @@ var roleActive = false;
 var assasinActive = false;
 var rowTrigger = false;
 //Background functions
+/**
+ * removes disabled attribute from {background} field, changes first children text
+ */
 function ShowBuildBackgroundSelect(){
     var backgroundVar =  $('[name="background"]');
     backgroundVar.removeAttr("disabled");
     backgroundVar.children().first().text("Select Background");
     //BuildBackgroundAptitudes(backgroundAptitudeVar);
 }
-
+/**
+ * removes disabled attribute from {BackgroundAptitude} field
+ */
 function ShowBackgroundAptitude(){
     var backgroundAptitudeVar = $('[name="BackgroundAptitude"]');
     backgroundAptitudeVar.removeAttr("disabled");
 }
-
+/**
+ * calls BackgroundOptionBuilder
+ */
+//TODO select first option in a field after change
 function BuildBackgroundAptitudes(val){
-    OptionBuilder(val);
+    BackgroundOptionBuilder(val);
 }
-
-function OptionBuilder(val){
+/**
+ * building background aptitude option select options
+ */
+function BackgroundOptionBuilder(val){
     for(var i = 0; i < BackgroundArr[val].Aptitude.length; i++){
         var option = document.createElement("option");
         option.setAttribute("value", i);
@@ -28,12 +38,17 @@ function OptionBuilder(val){
     }
 }
 //role functions
+/**
+ * removes disabled attribute from {role} field, changes first children text
+ */
 function ShowBuildRoleSelect(){
     var roleVar =  $('[name="role"]');
     roleVar.removeAttr("disabled");
     roleVar.children().first().text("Select Role");
 }
-
+/**
+ * removes disabled attribute from {assasin-select} field
+ */
 function AssasinSelectShow(){
    $('[name="assasin-select"]').removeAttr("disabled");
 }
