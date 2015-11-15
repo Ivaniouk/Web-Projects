@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     $('[name="world"]').on('change', function () {
-        ShowBuildBackgroundSelect();
+        RemoveDisabledChangeText("background", "Select Background");
         ChangeWorldAptitudeTable();
         if (roleActive) {
             FindSimilarApptitudes();
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var val = $('[name="background"]').find(":selected").val();
         $('[name="BackgroundAptitude"]').find(":enabled").remove(); //remove previous options
         BuildBackgroundAptitudes(val);
-        ShowBackgroundAptitude();
+        RemoveDisabledChangeText("BackgroundAptitude", "");
         var valBackground = $('[name="background"]').find(":selected").val();
         $(".talent-table td:eq(3)").html(BackgroundArr[valBackground].Talents);
         $(".skill-table td:eq(1)").html(BackgroundArr[valBackground].Skills);
@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('[name="BackgroundAptitude"]').on('change', function () {
         ChangeBackgroundAptitudeTable();
-        ShowBuildRoleSelect();
+        //ShowBuildRoleSelect();
+        RemoveDisabledChangeText("role", "Select Role");
         if (roleActive) {
             FindSimilarApptitudes();
         }

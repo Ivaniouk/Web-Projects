@@ -3,22 +3,16 @@ var roleActive = false;
 var assasinActive = false;
 var rowTrigger = false;
 //Background functions
-//TODO make ONE "disabled attribute" function
 /**
- * disabled attribute from {background} field, changes first children text
+ * removes disabled from field, changes text if needed
  */
-function ShowBuildBackgroundSelect() {
-    var backgroundVar =  $('[name="background"]');
-    backgroundVar.removeAttr("disabled");
-    backgroundVar.children().first().text("Select Background");
-    //BuildBackgroundAptitudes(backgroundAptitudeVar);
-}
-/**
- * removes disabled attribute from {BackgroundAptitude} field
- */
-function ShowBackgroundAptitude() {
-    var backgroundAptitudeVar = $('[name="BackgroundAptitude"]');
-    backgroundAptitudeVar.removeAttr("disabled");
+function RemoveDisabledChangeText(newName, newText) {
+    //$("[name=\"" + str_selector + "\"]")
+    var fieldVar = $("[name=" + newName + "]");
+    fieldVar.removeAttr("disabled");
+    if (newText !== "") {
+        fieldVar.children().first().text(newText);
+    }
 }
 /**
  * calls BackgroundOptionBuilder, always selects first option
@@ -39,14 +33,6 @@ function BackgroundOptionBuilder(val) {
     }
 }
 //role functions
-/**
- * removes disabled attribute from {role} field, changes first children text
- */
-function ShowBuildRoleSelect(){
-    var roleVar =  $('[name="role"]');
-    roleVar.removeAttr("disabled");
-    roleVar.children().first().text("Select Role");
-}
 /**
  * builds and appends assassin select
  */
@@ -102,7 +88,6 @@ function ChnageRoleTalentsTable(valRole) {
 function ChangeEquipmentTable(valBackground) {
     $(".equipment-table td:eq(1)").html(BackgroundArr[valBackground].Equipment);
 }
-
 /*********************Bonus Stats********************************************/
 function AddNewRow() {
     var $trMain = $('<tr name="aptitudeRow"></tr>');
