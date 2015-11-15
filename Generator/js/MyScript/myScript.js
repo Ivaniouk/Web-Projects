@@ -46,13 +46,12 @@ document.addEventListener('DOMContentLoaded', function () {
             FindSimilarApptitudes();
             $(".control-select-assasin-aptitude").remove();
             $this.parent().attr("class", "control-select-role");
-            //$this.parent().toggleClass("control-select-role-small");
         }
         ChnageRoleTalentsTable(valRole);
     });
-
+    /*
     $('[name="assasin-select"]').on('change', function(){
         assasinActive = true;
         FindSimilarApptitudes();
-    });
+    });*/
 });

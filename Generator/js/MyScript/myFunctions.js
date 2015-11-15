@@ -51,18 +51,26 @@ function ShowBuildRoleSelect(){
  * removes disabled attribute from {assasin-select} field
  */
 function AssasinSelectShow(){
-   //$('[name="assasin-select"]').removeAttr("disabled");
     var $div = $('<div></div>');
     $div.attr("class", "control-select-assasin-aptitude");
     var $select = $('<select></select>');
     $select.attr("class", "selectpicker form-control assasin-select");
+    $select.attr("name", "assasin-select");
     $select.append("<option disabled selected>Aptitude</option>");
     $select.append("<option>WS</option>");
     $select.append("<option>BS</option>");
+    $select.on('change', function(){
+        assasinActive = true;
+        FindSimilarApptitudes();
+    });
     $div.append($select);
     $(".control-select-role").parent().append($div);
 }
-
+/*
+function AssasinSelectTrigger(){
+    assasinActive = true;
+    FindSimilarApptitudes();
+}*/
 //change table
 function ChangeWorldAptitudeTable(){
     var val = $('[name="world"]').find(":selected").val();
