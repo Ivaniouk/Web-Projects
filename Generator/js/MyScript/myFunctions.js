@@ -59,18 +59,15 @@ function AssasinSelectShow(){
     $select.append("<option disabled selected>Aptitude</option>");
     $select.append("<option>WS</option>");
     $select.append("<option>BS</option>");
-    $select.on('change', function(){
-        assasinActive = true;
-        FindSimilarApptitudes();
-    });
+    $select.on('change', AssasinSelectHandler);
     $div.append($select);
     $(".control-select-role").parent().append($div);
 }
-/*
-function AssasinSelectTrigger(){
+
+function AssasinSelectHandler(){
     assasinActive = true;
     FindSimilarApptitudes();
-}*/
+}
 //change table
 function ChangeWorldAptitudeTable(){
     var val = $('[name="world"]').find(":selected").val();
