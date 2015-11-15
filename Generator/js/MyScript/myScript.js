@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             FindSimilarApptitudes();
             $(".control-select-assasin-aptitude").remove();
-            $this.parent().toggleClass("control-select-role-small");
+            $this.parent().attr("class", "control-select-role");
+            //$this.parent().toggleClass("control-select-role-small");
         }
         ChnageRoleTalentsTable(valRole);
     });
