@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    $('[name="btn_rand"]').on('click', function(){
+    $('[name="btn_rand"]').on('click', function () {
         var gender = $('[name="gender"]').find(":selected").html();
         SetRandomName(gender);
         return false;
     });
 
-    $('[name="world"]').on('change', function(){
+    $('[name="world"]').on('change', function () {
         ShowBuildBackgroundSelect();
         ChangeWorldAptitudeTable();
-        if(roleActive){
+        if (roleActive) {
             FindSimilarApptitudes();
         }
     });
 
-    $('[name="background"]').on('change', function(){
+    $('[name="background"]').on('change', function () {
         var val = $('[name="background"]').find(":selected").val();
         $('[name="BackgroundAptitude"]').find(":enabled").remove(); //remove previous options
         BuildBackgroundAptitudes(val);
@@ -25,19 +25,19 @@ document.addEventListener('DOMContentLoaded', function () {
         ChangeEquipmentTable(valBackground);
     });
 
-    $('[name="BackgroundAptitude"]').on('change', function(){
+    $('[name="BackgroundAptitude"]').on('change', function () {
         ChangeBackgroundAptitudeTable();
         ShowBuildRoleSelect();
-        if(roleActive){
+        if (roleActive) {
             FindSimilarApptitudes();
         }
     });
 
-    $('[name="role"]').on('change', function(){
+    $('[name="role"]').on('change', function() {
         roleActive = true;
-       var $this = $(this);
-        var valRole = $('[name="role"]').find(":selected").val();
-        if(valRole == 0){
+        var $this = $(this);
+        var valRole = $this.find(":selected").val();
+        if (valRole == 0) {
             $this.parent().toggleClass("control-select-role-small");
             AssassinSelectShow();
         } else {
