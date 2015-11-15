@@ -37,11 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('[name="role"]').on('change', function(){
         roleActive = true;
+       var $this = $(this);
         var valRole = $('[name="role"]').find(":selected").val();
         if(valRole == 0){
+            $this.parent().toggleClass("control-select-role-small");
             AssasinSelectShow();
         } else {
             FindSimilarApptitudes();
+            $(".control-select-assasin-aptitude").remove();
+            $this.parent().toggleClass("control-select-role-small");
         }
         ChnageRoleTalentsTable(valRole);
     });
