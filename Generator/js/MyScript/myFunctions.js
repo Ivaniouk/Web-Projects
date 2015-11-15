@@ -48,9 +48,9 @@ function ShowBuildRoleSelect(){
     roleVar.children().first().text("Select Role");
 }
 /**
- * removes disabled attribute from {assasin-select} field
+ * builds and appends assassin select
  */
-function AssasinSelectShow(){
+function AssassinSelectShow(){
     var $div = $('<div></div>');
     $div.attr("class", "control-select-assasin-aptitude");
     var $select = $('<select></select>');

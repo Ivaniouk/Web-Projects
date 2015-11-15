@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
         ShowBuildBackgroundSelect();
         ChangeWorldAptitudeTable();
         if(roleActive){
-            console.log("world");
             FindSimilarApptitudes();
         }
     });
@@ -34,14 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-
     $('[name="role"]').on('change', function(){
         roleActive = true;
        var $this = $(this);
         var valRole = $('[name="role"]').find(":selected").val();
         if(valRole == 0){
             $this.parent().toggleClass("control-select-role-small");
-            AssasinSelectShow();
+            AssassinSelectShow();
         } else {
             FindSimilarApptitudes();
             $(".control-select-assasin-aptitude").remove();
@@ -49,9 +47,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         ChnageRoleTalentsTable(valRole);
     });
-    /*
-    $('[name="assasin-select"]').on('change', function(){
-        assasinActive = true;
-        FindSimilarApptitudes();
-    });*/
 });
