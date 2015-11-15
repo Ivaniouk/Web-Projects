@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('[name="BackgroundAptitude"]').on('change', function () {
         ChangeBackgroundAptitudeTable();
-        //ShowBuildRoleSelect();
         RemoveDisabledChangeText("role", "Select Role");
         if (roleActive) {
             FindSimilarApptitudes();

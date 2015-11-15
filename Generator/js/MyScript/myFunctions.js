@@ -7,7 +7,6 @@ var rowTrigger = false;
  * removes disabled from field, changes text if needed
  */
 function RemoveDisabledChangeText(newName, newText) {
-    //$("[name=\"" + str_selector + "\"]")
     var fieldVar = $("[name=" + newName + "]");
     fieldVar.removeAttr("disabled");
     if (newText !== "") {
