@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () { // канонічний JS варіант навішування лисенера на сторінку 
 	
-	var langObj = GetCurrentLangObj(document.documentElement.lang);
-	
-	
 	//я так зрозумів шо тобі треба в квері стайлі це написать того тут починається квері
 	function appendWork() {
 		CreateWork();

@@ -168,35 +168,7 @@ function ReturnPromiseWrapper() {
 
 
 
-/** TESTING LANG OBJECT************************************************/
 
-var langObjRU = {
-	"Add work place" : "Добавить место работы",
-	"Get work value" : "Получить значение полей",
-	"Promise test" : "Тест Промиса",
-	"Promise returning test" : "Возврат промиса"
-};
-
-var langObjENG = {
-	"Add work place" : "Add work place",
-	"Get work value" : "Get work value",
-	"Promise test" : "Promise test",
-	"Promise returning test" : "Promise returning test"
-};
-
-function GetCurrentLangObj (lang) {
-	
-	switch(lang) {
-		case "en":
-			return langObjENG;
-		break;
-		case "ru":
-			return langObjRU;
-		break;
-		default:
-			return langObjENG; 
-	}
-}
 
 
 
